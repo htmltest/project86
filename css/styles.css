@@ -1,0 +1,131 @@
+html {min-width:1200px; height:100%}
+
+body {min-width:1200px; height:100%; margin:0; padding:0; font:15px/20px Roboto, sans-serif; color:#9d9d9d; background:#fff; -webkit-text-size-adjust:100%}
+
+a {outline:none; color:#036; text-decoration:none}
+a:hover {color:#ff3757}
+
+img {border:none}
+
+h1 {margin:64px 0 53px 0; padding:0; font:bold 40px/40px "Cormorant Garamond", serif; color:#036}
+h1:first-child {margin-top:0}
+
+.btn {display:block; border-radius:0; background:#fff; margin:0; padding:0; outline:none; width:100%; border:1px solid #036; text-decoration:none; height:40px; box-sizing:border-box; color:#036; text-align:center; text-transform:uppercase; font:12px/40px Roboto, sans-serif; -webkit-appearance:none; cursor:pointer; transition:background-color 0.25s ease-out 0s, color 0.25s ease-out 0s}
+.btn:hover {background:#036; color:#fff}
+
+.wrapper {min-width:1200px; width:100%; min-height:100%; position:relative; overflow:hidden}
+.wrapper-inner {padding:0 0 440px 0}
+
+.container {max-width:1170px; padding:0 15px; margin:0 auto}
+.container:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+
+header {height:80px; background:#036}
+
+.logo {float:left; line-height:0; padding:12px 0 0 0}
+
+.logo-title {float:left; font:bold 15px/20px "Cormorant Garamond", serif; text-transform:uppercase; padding:31px 0 0 4px; color:#ff3757}
+
+nav {float:left; margin:31px 0 0 97px}
+nav ul {margin:0; padding:0; list-style:none}
+nav li {margin:0 0 0 40px; padding:0; float:left}
+nav li:first-child {margin:0}
+nav li:before {display:none}
+nav a {color:#fff; text-decoration:none}
+nav a:hover {color:#fff}
+
+.header-user {float:right; margin:27px 0 0 0}
+.header-user-link {display:block; position:relative; text-decoration:none; width:23px; height:23px; background:url(../images/header-user.png)}
+.header-user-link span {position:absolute; display:block; right:-4px; top:-8px; background:#fff; width:15px; height:15px; border-radius:50%; text-align:center; font-size:10px; line-height:15px}
+
+.header-search {float:right; margin:28px 48px 0 0}
+.header-search-link {display:block; position:relative; text-decoration:none; width:22px; height:22px; background:url(../images/header-search.png)}
+
+.side {float:left; width:200px; padding:30px 0 0 0}
+
+.side-menu ul {margin:0; padding:19px 0 20px 0; font:bold 20px/40px "Cormorant Garamond", serif; list-style:none; border-top:1px solid #e5eaef}
+.side-menu ul:first-child {border-top:none}
+.side-menu li {margin:0; padding:0; position:relative}
+.side-menu li:before {display:none}
+.side-menu li.active a {color:#ff3757}
+.side-menu span {display:block; position:absolute; right:0; top:50%; width:29px; height:29px; margin-top:-15px; color:#fff; background:#ff3757; border-radius:15px; font-size:20px; line-height:29px; text-align:center}
+
+.side-contacts {background:#036; padding:24px 24px 33px 24px}
+.side-contacts-phone {font:bold 20px/20px "Cormorant Garamond", serif; color:#fff}
+.side-contacts-phone a,
+.side-contacts-phone a:hover {color:#fff}
+.side-contacts-schedule {font-size:12px; color:rgba(255, 255, 255, .75); padding:6px 0 0 0}
+.side-contacts-support-title {font-size:12px; color:rgba(255, 255, 255, .75); padding:21px 0 0 0; white-space:nowrap}
+.side-contacts-support {font:bold 18px/18px "Cormorant Garamond", serif; color:#fff}
+.side-contacts-support a,
+.side-contacts-support a:hover {color:#fff}
+
+.side+.content {margin:0 0 0 300px}
+
+.content-wrap {float:left; width:100%; padding:47px 0 0 0}
+
+.profile-block {border-bottom:1px solid #e5eaef; padding:49px 0}
+.profile-block:first-child {padding-top:0}
+.profile-block-inner {display:table; width:100%}
+.profile-block-content {display:table-cell; vertical-align:middle}
+.profile-block-edit {display:table-cell; vertical-align:middle; width:170px; padding:0 0 0 30px}
+
+.profile-avatar {float:left; width:68px; height:68px; border:1px solid #ff3757}
+.profile-avatar-add {display:block; font-size:10px; line-height:15px; text-align:center; text-transform:uppercase; height:49px; padding:19px 0 0 0}
+.profile-name {margin:0 0 0 100px; font:bold 25px/30px "Cormorant Garamond", serif; color:#036; padding:3px 0 0 0}
+
+.profile-block-title {font:bold 18px/20px "Cormorant Garamond", serif; text-transform:uppercase; padding:9px 0 41px 0}
+.profile-block-params {display:table; width:100%}
+.profile-block-param {display:table-cell; vertical-align:top; padding:0 0 0 30px}
+.profile-block-param:first-child {padding:0}
+.profile-block-param-title {font:bold 12px/20px "Cormorant Garamond", serif; text-transform:uppercase}
+.profile-block-param-value {color:#036; font-size:16px; line-height:20px}
+
+.childs {display:table; width:100%; border-spacing:0 20px; margin:-20px 0}
+.child {display:table-row}
+.child-info {display:table-cell; border:1px solid #e5eaef; padding:17px 20px 18px 20px; vertical-align:top; width:100%}
+.child-name {font:bold 20px/20px "Cormorant Garamond", serif}
+.child-params {font-weight:300; padding:3px 0 0 0}
+.child-params:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.child-param {float:left; margin:0 0 0 106px}
+.child-param:first-child {margin:0}
+.child-finance {display:table-cell; border:1px solid #e5eaef; border-left:none; padding:18px 20px 18px 20px; vertical-align:top; white-space:nowrap}
+.child-finance-title {font:bold 12px/20px "Cormorant Garamond", serif; text-transform:uppercase}
+.child-finance-value {font-size:20px; color:#036; padding:1px 0 0 0}
+.child-finance-value-debt {color:#ff3757}
+.child-finance-value span {font-weight:300}
+
+footer {height:353px; position:relative; margin:-353px 0 0 0; background:#036 url(../images/footer.png) no-repeat fixed center bottom}
+
+.footer-menu {margin:0 -15px; font:16px/24px "PT Sans", sans-serif; padding:12px 0 0 0}
+.footer-menu:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.footer-menu ul {float:left; width:25%; margin:0; padding:0 15px; box-sizing:border-box; list-style:none}
+.footer-menu ul li {margin:14px 0 0 0; padding:0}
+.footer-menu ul li:first-child {margin:0}
+.footer-menu ul li:before {display:none}
+.footer-menu a {color:#5594d1}
+.footer-menu a:hover {color:#6da3d7}
+
+.footer-social {margin:0 -15px; padding:24px 0 0 0}
+.footer-social:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.footer-social-line {float:left; width:75%; padding:0 15px; box-sizing:border-box}
+.footer-social-line:before {content:""; display:block; height:1px; background:#00295a; margin:17px 50px 0 0}
+.footer-social-inner {float:left; width:25%; padding:0 15px; box-sizing:border-box}
+.footer-social-inner a {float:left; margin:0 15px 0 0; width:34px; height:34px; transition:background-image 0.25s ease-out 0s}
+.footer-social-inner a.footer-social-fb {background:url(../images/social-icon-fb.png)}
+.footer-social-inner a.footer-social-fb:hover {background:url(../images/social-icon-fbh.png)}
+.footer-social-inner a.footer-social-gp {background:url(../images/social-icon-gp.png)}
+.footer-social-inner a.footer-social-gp:hover {background:url(../images/social-icon-gph.png)}
+.footer-social-inner a.footer-social-in {background:url(../images/social-icon-ins.png)}
+.footer-social-inner a.footer-social-in:hover {background:url(../images/social-icon-insh.png)}
+.footer-social-inner a.footer-social-yt {background:url(../images/social-icon-yt.png)}
+.footer-social-inner a.footer-social-yt:hover {background:url(../images/social-icon-yth.png)}
+
+.bottom {margin:0 -15px}
+.bottom:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.bottom-text {float:left; width:75%; padding:0 15px; box-sizing:border-box}
+.footer-logo {float:left; line-height:0; padding:21px 0 0 0}
+.copyrights {margin:0 0 0 250px; color:#8099b3; font:16px/24px "PT Sans", sans-serif; padding:32px 0 0 0}
+.copyrights a {color:#8099b3}
+.footer-link-error {float:left; width:25%; padding:50px 15px 0 15px; box-sizing:border-box; font:14px/24px "PT Sans", sans-serif}
+.footer-link-error a {color:#5594d1}
+.footer-link-error a:hover {color:#6da3d7}
