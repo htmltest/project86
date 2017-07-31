@@ -7,8 +7,9 @@ a:hover {color:#ff3757}
 
 img {border:none}
 
-h1 {margin:64px 0 53px 0; padding:0; font:bold 40px/40px "Cormorant Garamond", serif; color:#036}
+h1 {margin:64px 0 53px 0; padding:0; font:bold 40px/40px "Cormorant Garamond", serif; color:#036; position:relative}
 h1:first-child {margin-top:0}
+h1 span {display:inline-block; vertical-align:middle; width:29px; height:29px; margin:2px 0 0 9px; color:#fff; background:#ff3757; border-radius:15px; font-size:20px; line-height:29px; text-align:center}
 
 .btn {display:block; border-radius:0; background:#fff; margin:0; padding:0; outline:none; width:100%; border:1px solid #036; text-decoration:none; height:40px; box-sizing:border-box; color:#036; text-align:center; text-transform:uppercase; font:12px/40px Roboto, sans-serif; -webkit-appearance:none; cursor:pointer; transition:background-color 0.25s ease-out 0s, color 0.25s ease-out 0s}
 .btn:hover {background:#036; color:#fff}
@@ -93,6 +94,106 @@ nav a:hover {color:#fff}
 .child-finance-value {font-size:20px; color:#036; padding:1px 0 0 0}
 .child-finance-value-debt {color:#ff3757}
 .child-finance-value span {font-weight:300}
+
+.filter {border:1px solid #ebebeb; padding:18px 20px 20px 20px; margin:-20px 0 20px 0}
+.filter-title {font:bold 15px/20px "Cormorant Garamond", serif; text-transform:uppercase}
+.filter-title a {color:#9d9d9d; text-decoration:none}
+.filter-title a:after {content:""; display:inline-block; vertical-align:middle; width:0; height:0; border-bottom:7px solid #ff3757; border-left:6px solid transparent; border-right:6px solid transparent; margin:-2px 0 0 13px}
+.filter.closed .filter-title a:after {border-bottom:none; border-top:7px solid #ff3757}
+
+.filter.closed .filter-form {display:none}
+.filter-form form {margin:0; padding:20px 0 0 0}
+.filter-form form:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.filter-field {float:left; width:50%; padding:0 15px 0 0; box-sizing:border-box}
+.filter-field+.filter-field {padding:0 0 0 15px}
+
+.form-select select {width:100%}
+
+.news {margin:30px 0}
+.news-item {border-bottom:1px solid #ebebeb; padding:31px 0 40px 0}
+.news-item-name {font:bold 25px/30px "Cormorant Garamond", serif}
+.news-item-anonce {padding:7px 0 0 0}
+.news-item-date {font-size:13px; color:#a0142a; padding:11px 0 0 0}
+
+.pager {margin:44px 0; text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
+.pager a,
+.pager span {display:inline-block; vertical-align:top; width:28px; height:28px; border:1px solid #ebebeb; font-size:15px; line-height:28px; letter-spacing:0; margin:0 5px}
+.pager span {color:#036}
+.pager a.active {color:#fff; background:#036; border-color:#036}
+
+.tabs {border-bottom:1px solid #e5eaef; font-size:14px; font-weight:300}
+.tabs ul {margin:0; padding:0; list-style:none}
+.tabs li {margin:0 0 0 25px; padding:0; float:left}
+.tabs li:first-child {margin:0}
+.tabs li:before {display:none}
+.tabs a {float:left; position:relative; padding:28px 0 31px 0}
+.tabs li.active a:after,
+.tabs a:hover:after {content:""; display:block; position:absolute; left:0; bottom:-2px; right:0; height:3px; background:#ff3757}
+
+.loading {display:none; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(255, 255, 255, .5) url(../images/loading.svg) no-repeat center}
+
+.calendar {margin:40px 0; position:relative; border-top:1px solid #ebebeb; border-right:1px solid #ebebeb; border-bottom:1px solid #ebebeb}
+.calendar-month {position:relative; font:bold 20px/58px "Cormorant Garamond", serif; text-transform:uppercase; border-left:1px solid #ebebeb}
+.calendar-month-current {text-align:center; color:#036}
+.calendar-month-prev,
+.calendar-month-next {position:absolute; top:0}
+.calendar-month-prev {left:20px}
+.calendar-month-next {right:20px}
+.calendar-month-prev a,
+.calendar-month-next a {color:#ff3757}
+.calendar-month-prev a:before {content:""; display:inline-block; vertical-align:middle; width:14px; height:9px; background:url(../images/calendar-month-arrows.png); margin:-2px 10px 0 0}
+.calendar-month-next a:after {content:""; display:inline-block; vertical-align:middle; width:14px; height:9px; background:url(../images/calendar-month-arrows.png) -15px top; margin:-2px 0 0 10px}
+.calendar-list {position:relative}
+.calendar-list:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.calendar-item {float:left; box-sizing:border-box; border-top:1px solid #ebebeb; position:relative; border-left:1px solid #ebebeb; width:14.28%}
+.calendar-item-inner {position:relative; height:139px}
+.calendar-item-day {position:absolute; right:10px; top:9px; color:#cdcdcd; font:bold 14px/20px "Cormorant Garamond", serif}
+.calendar-item:nth-child(7n) .calendar-item-day,
+.calendar-item:nth-child(7n - 1) .calendar-item-day {color:#ff3757}
+.calendar-item.active .calendar-item-day {color:#036}
+.calendar-item-content {position:absolute; left:0; top:0; width:100%; box-sizing:border-box; font-size:10px; line-height:12px; padding:28px 5px 0 25px}
+.calendar-item-link {position:relative; padding:0 0 8px 0}
+.calendar-item-link:before {content:""; display:block; width:9px; height:9px; position:absolute; left:-13px; top:3px; background:#036; border-radius:50%}
+.calendar-item-link+.calendar-item-link {display:none}
+.calendar-item-link > a {color:#9d9d9d}
+.calendar-item-link > a span {display:block; font-size:12px; line-height:15px; color:#036; padding:0 0 4px 0}
+.calendar-item-more {padding:7px 0 0 0; font-size:12px; line-height:15px; margin:0 0 0 -13px}
+.calendar-item-more > a {color:#ff3757}
+
+.calendar-more {opacity:0; position:absolute; left:0; top:0; min-width:100%; min-height:100%; background:#fff; z-index:99; transform:translateY(-40px); transition:opacity .3s 0s, transform .3s 0s; box-shadow:0 15px 40px rgba(0, 51, 102, .25)}
+.calendar-item:nth-child(7n) .calendar-more,
+.calendar-item:nth-child(7n - 1) .calendar-more,
+.calendar-item:nth-child(7n - 2) .calendar-more {left:auto; right:0}
+.calendar-more.active {opacity:1; transform:translateY(0)}
+.calendar-more-close {display:block; width:20px; height:20px; border-radius:50%; position:absolute; right:-10px; top:-10px; background:#ff3757 url(../images/calendar-close.png) no-repeat center}
+.calendar-more-date {text-align:center; font:21px/27px MinionPro, serif; color:#0090ae; padding:27px 0 0 0}
+.calendar-more-date:after {content:""; display:block; width:52px; height:1px; margin:15px auto 0 auto; background:rgba(187, 204, 208, .5)}
+.calendar-more-list {padding:30px 16px 30px 0}
+.calendar-more-list-inner {max-height:220px; position:relative; overflow:auto; outline:none}
+.calendar-more-list-wrap {padding:3px 0 8px 0; position:relative}
+.calendar-more-list-active {position:absolute; width:6px; background:#0090ae; position:absolute; left:0}
+.calendar-more-list-item {font-size:15px; line-height:20px; font-weight:300; padding:0 20px 0 17px; margin:20px 0 0 29px; position:relative}
+.calendar-more-list-item:first-child {margin-top:0}
+.calendar-more-list-item:before {content:""; display:block; width:8px; height:8px; background:#0093b2; border-radius:50%; position:absolute; left:0; top:6px}
+.calendar-more-list-item.birthday:before {background:#a77bca}
+.calendar-more-list-item.other:before {background:#00bfb3}
+.calendar-more-list-item a {color:#01426a}
+.calendar-more-list .jspVerticalBar {width:5px}
+.calendar-more-list .jspTrack {background:#f8f8f8}
+.calendar-more-list .jspDrag {background:#0090ae}
+.calendar-more-details {width:240px; padding:20px 30px 34px 30px}
+.calendar-more-details-photo {line-height:0; float:left; width:150px; margin:0 20px 10px 0}
+.calendar-more-details-photo img {display:block; width:100%}
+.calendar-more-details-name {font:21px/27px MinionPro, serif; color:#01426a; padding:3px 0 0 0}
+.calendar-more-details-name a {color:#01426a}
+.calendar-more-details-anonce {font-size:15px; line-height:20px; color:#777; padding:16px 0 0 0}
+.calendar-more-details-link {padding:33px 0 6px 0; font:12px/16px MinionPro, serif; text-transform:uppercase}
+.calendar-more-details-link:after {content:""; display:inline-block; vertical-align:middle; width:17px; height:9px; background:url(../images/calendar-more-details.png); margin:-2px 0 0 10px}
+.calendar-more-details-link a {color:#01426a}
+.calendar-more-date-birthday {font-size:16px; color:#0090ae}
+
+.calendar-more-loading {height:100px}
+.calendar-more-text-mobile-ctrl {display:none}
 
 footer {height:353px; position:relative; margin:-353px 0 0 0; background:#036 url(../images/footer.png) no-repeat fixed center bottom}
 
