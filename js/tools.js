@@ -45,7 +45,7 @@ $(document).ready(function() {
             var curIndex = curItem.find('.calendar-item-link').index(curLink.parent());
 
             $('.calendar-more').remove();
-            var newHTML = '<div class="calendar-more">' +
+            var newHTML = '<div class="calendar-more calendar-more-list-outer">' +
                                 '<div class="calendar-more-date">' + curItem.find('.calendar-item-day').data('fulldate') + '</div>' +
                                 '<div class="calendar-more-list">' +
                                     '<div class="calendar-more-list-inner">' +
@@ -53,41 +53,24 @@ $(document).ready(function() {
 
             curItem.find('.calendar-item-link a').each(function() {
                 var itemLink = $(this);
-                var hasBirthday = '';
-                if (itemLink.parent().hasClass('birthday')) {
-                    hasBirthday = ' birthday';
-                }
-                var hasOther = '';
-                if (itemLink.parent().hasClass('other')) {
-                    hasOther = ' other';
-                }
-                newHTML +=                  '<div class="calendar-more-list-item' + hasBirthday + hasOther + '"><a href="' + itemLink.attr('href') + '">' + itemLink.html() + '</a></div>';
+                newHTML +=                  '<div class="calendar-more-list-item"><a href="' + itemLink.attr('href') + '">' + itemLink.html() + '</a></div>';
             });
 
             newHTML +=                      '<div class="calendar-more-list-active"></div>' +
                                         '</div>' +
                                     '</div>' +
                                 '</div>' +
-                                '<a href="#" class="calendar-more-close"></a>' +
                             '</div>';
             curItem.append(newHTML);
-            if ($(window).width() < 1200) {
-                $('.calendar-more').css({'margin-top': (curItem.offset().top - $('.calendar-list').offset().top) + 'px'});
-            }
             curItem.find('.calendar-more-list-item').eq(curIndex).addClass('active');
             var curActiveTop = 0;
             curItem.find('.calendar-more-list-item').each(function() {
                 if (curItem.find('.calendar-more-list-item').index($(this)) < curIndex) {
-                    curActiveTop += $(this).height();
-                }
-                if (curItem.find('.calendar-more-list-item').index($(this)) <= curIndex) {
-                    if (curItem.find('.calendar-more-list-item').index($(this)) > 0) {
-                        curActiveTop += 20;
-                    }
+                    curActiveTop += $(this).outerHeight(true);
                 }
             });
-            curItem.find('.calendar-more-list-active').css({'top': curActiveTop, 'height': curItem.find('.calendar-more-list-item').eq(curIndex).height() + 8});
-            curItem.find('.calendar-more').addClass('active');
+            curItem.find('.calendar-more-list-active').css({'top': curActiveTop, 'height': curItem.find('.calendar-more-list-item').eq(curIndex).outerHeight(true)});
+            curItem.find('.calendar-more').show().addClass('active');
             curItem.find('.calendar-more-list-item a').eq(curIndex).trigger('click');
             $('.calendar-more-list-inner').jScrollPane({
                 autoReinitialise: true
@@ -109,79 +92,64 @@ $(document).ready(function() {
         $('.calendar-more').remove();
     });
 
-    function positionCalendarText(curItem) {
-        curItem.find('.calendar-more').addClass('active');
-    }
+    $('body').on('click', '.calendar-more-list-item a', function(e) {
+        var curLink = $(this);
+        var curItem = curLink.parents().filter('.calendar-item');
 
-        $('body').on('click', '.calendar-more-list-item a', function(e) {
-            var curLink = $(this);
-            var curItem = curLink.parents().filter('.calendar-item');
+        curItem.find('.calendar-more-text').remove();
+        curItem.append('<div class="calendar-more calendar-more-text"><div class="calendar-more-loading"><div class="loading" style="display:block"></div></div><a href="#" class="calendar-more-close"></a></div>');
+        curItem.find('.calendar-more').show().addClass('active');
 
+        $.ajax({
+            type: 'POST',
+            url: curLink.attr('href'),
+            dataType: 'html',
+            cache: false
+        }).done(function(html) {
             curItem.find('.calendar-more-text').remove();
-            curItem.append('<div class="calendar-more calendar-more-text"><div class="calendar-more-loading"><div class="loading" style="display:block"></div></div><a href="#" class="calendar-more-close"></a></div>');
-            positionCalendarText(curItem, curLink);
-
-            $.ajax({
-                type: 'POST',
-                url: curLink.attr('href'),
-                dataType: 'html',
-                cache: false
-            }).done(function(html) {
-                curItem.find('.calendar-more-text').remove();
-                curItem.append(html);
-                positionCalendarText(curItem, curLink);
-                curItem.find('.calendar-more-list-item.active').removeClass('active');
-                curLink.parent().addClass('active');
-                var curIndex = curItem.find('.calendar-more-list-item').index(curLink.parent());
-                curItem.find('.calendar-more-text').prepend('<div class="calendar-more-text-mobile-ctrl">' + (curIndex + 1) + '/' + curItem.find('.calendar-more-list-item').length + '<a href="#" class="calendar-more-text-mobile-prev"></a><a href="#" class="calendar-more-text-mobile-next"></a></div>');
-                var curActiveTop = 0;
-                curItem.find('.calendar-more-list-item').each(function() {
-                    if (curItem.find('.calendar-more-list-item').index($(this)) < curIndex) {
-                        curActiveTop += $(this).height();
-                    }
-                    if (curItem.find('.calendar-more-list-item').index($(this)) <= curIndex) {
-                        if (curItem.find('.calendar-more-list-item').index($(this)) > 0) {
-                            curActiveTop += 20;
-                        }
-                    }
-                });
-                curItem.find('.calendar-more-list-active').animate({'top': curActiveTop, 'height': curItem.find('.calendar-more-list-item').eq(curIndex).height() + 8});
+            curItem.append(html);
+            curItem.find('.calendar-more').show().addClass('active');
+            curItem.find('.calendar-more-list-item.active').removeClass('active');
+            curLink.parent().addClass('active');
+            var curIndex = curItem.find('.calendar-more-list-item').index(curLink.parent());
+            curItem.find('.calendar-more-text').prepend('<div class="calendar-more-text-mobile-ctrl">' + (curIndex + 1) + '/' + curItem.find('.calendar-more-list-item').length + '<a href="#" class="calendar-more-text-mobile-prev"></a><a href="#" class="calendar-more-text-mobile-next"></a></div>');
+            var curActiveTop = 0;
+            curItem.find('.calendar-more-list-item').each(function() {
+                if (curItem.find('.calendar-more-list-item').index($(this)) < curIndex) {
+                    curActiveTop += $(this).outerHeight(true);
+                }
             });
-            e.preventDefault();
+            curItem.find('.calendar-more-list-active').animate({'top': curActiveTop, 'height': curItem.find('.calendar-more-list-item').eq(curIndex).outerHeight(true)});
         });
+        e.preventDefault();
+    });
 
-        $(document).click(function(e) {
-            if ($(e.target).parents().filter('.calendar-more').length == 0 && !$(e.target).parent().hasClass('calendar-item-more') && !$(e.target).parent().hasClass('calendar-item-link')) {
-                $('.calendar-more').remove();
-            }
-        });
-
-        $('body').on('click', '.calendar-more-close', function(e) {
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.calendar-more').length == 0 && !$(e.target).parent().hasClass('calendar-item-more') && !$(e.target).parent().hasClass('calendar-item-link')) {
             $('.calendar-more').remove();
-            e.preventDefault();
-        });
+        }
+    });
 
-        $('body').on('click', '.calendar-more-text-mobile-prev', function(e) {
-            var curItem = $(this).parents().filter('.calendar-item');
-            var curIndex = curItem.find('.calendar-more-list-item').index(curItem.find('.calendar-more-list-item.active'));
-            curIndex--;
-            if (curIndex < 0) {
-                curIndex = curItem.find('.calendar-more-list-item').length - 1;
-            }
-            curItem.find('.calendar-more-list-item').eq(curIndex).find('a').trigger('click');
-            e.preventDefault();
-        });
+    $('body').on('click', '.calendar-more-close', function(e) {
+        $('.calendar-more').remove();
+        e.preventDefault();
+    });
 
-        $('body').on('click', '.calendar-more-text-mobile-next', function(e) {
-            var curItem = $(this).parents().filter('.calendar-item');
-            var curIndex = curItem.find('.calendar-more-list-item').index(curItem.find('.calendar-more-list-item.active'));
-            curIndex++;
-            if (curIndex > curItem.find('.calendar-more-list-item').length - 1) {
-                curIndex = 0;
-            }
-            curItem.find('.calendar-more-list-item').eq(curIndex).find('a').trigger('click');
-            e.preventDefault();
-        });
+    $('.form-input input').each(function() {
+        if ($(this).val() != '') {
+            $(this).parent().addClass('focus');
+        }
+    });
+
+    $('.form-input input').focus(function() {
+        $(this).parent().addClass('focus');
+    });
+
+    $('.form-input input').blur(function() {
+        if ($(this).val() == '') {
+            $(this).parent().removeClass('focus');
+        }
+    });
 
 });
 

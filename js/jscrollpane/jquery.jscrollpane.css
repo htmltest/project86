@@ -21,7 +21,7 @@
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 4px;
+	width: 3px;
 	height: 100%;
 }
 
@@ -31,7 +31,7 @@
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 4px;
+	height: 3px;
 }
 
 .jspCap
@@ -46,24 +46,19 @@
 
 .jspTrack
 {
-	background: rgba(0, 0, 0, .2);
+	background: #eaedf0;
 	position: relative;
-    border-radius: 2px;
-}
-
-.structure-level-item-detail .jspTrack
-{
-	background: rgba(83, 146, 175, .2);
+    border-radius: 0;
 }
 
 .jspDrag
 {
-	background: #0090ae;
+	background: #ff3757;
 	position: relative;
 	top: 0;
 	left: 0;
 	cursor: pointer;
-    border-radius: 2px;
+    border-radius: 0;
 }
 
 .jspHorizontalBar .jspTrack,
