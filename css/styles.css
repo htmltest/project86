@@ -7,12 +7,151 @@ a:hover {color:#ff3757}
 
 img {border:none}
 
-h1 {margin:64px 0 53px 0; padding:0; font:bold 40px/40px "Cormorant Garamond", serif; color:#036; position:relative}
+h1 {margin:64px 0 53px 0; padding:0; font:37px/40px Lora, serif; color:#036; position:relative}
 h1:first-child {margin-top:0}
 h1 span {display:inline-block; vertical-align:middle; width:29px; height:29px; margin:2px 0 0 9px; color:#fff; background:#ff3757; border-radius:15px; font-size:20px; line-height:29px; text-align:center}
+h2 {margin:50px 0 20px 0; padding:0; font:27px/30px Lora, serif; color:#036}
+h3 {margin:40px 0 20px 0; padding:0; font:22px/30px Lora, serif; color:#036}
+h2+h3 {margin-top:0}
+h4 {margin:40px 0 20px 0; padding:0; font:17px/20px Lora, serif; color:#036}
+h3+h4 {margin-top:0}
+p {margin:20px 0; padding:0}
+hr {height:1px; margin:40px 0; padding:0; border:none; background:#ebebeb}
+ul {margin:20px 0; padding:0; list-style:none}
+ul li {margin:20px 0; padding:0 0 0 25px; position:relative}
+ul li:before {content:""; display:block; width:5px; height:5px; background:#036; position:absolute; left:7px; top:8px; border-radius:50%}
+li ul li:before {background:#ff3757}
+ol {margin:20px 0; padding:0; list-style:none; counter-reset:point}
+ol li {margin:20px 0; padding:0 0 0 25px; position:relative}
+ol li ol {counter-reset:subpoint}
+ol li:before {content:counter(point)'.'; counter-increment:point 1; position:absolute; left:4px; top:0; color:#036; font-weight:bold; font-family:Lora, serif}
+li ol li:before {content:counter(point)'.'counter(subpoint); counter-increment:subpoint 1}
+blockquote {font-size:20px; font-weight:300; line-height:30px; padding:0 0 0 27px; border-left:3px solid #ff3757; margin:40px 0; color:#898989}
 
-.btn {display:block; border-radius:0; background:#fff; margin:0; padding:0; outline:none; width:100%; border:1px solid #036; text-decoration:none; height:40px; box-sizing:border-box; color:#036; text-align:center; text-transform:uppercase; font:12px/40px Roboto, sans-serif; -webkit-appearance:none; cursor:pointer; transition:background-color 0.25s ease-out 0s, color 0.25s ease-out 0s}
+.signature {margin:40px 0}
+.signature:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.signature-text {float:left}
+.signature-text strong {color:#036; font:17px/20px Lora, serif}
+.signature-social {float:right; padding:6px 0 0 0}
+
+.wrapper table {width:100%; margin:40px 0 60px 0; border-collapse:collapse; color:#036}
+.wrapper th {vertical-align:top; text-align:left; font:10px/20px Lora, serif; text-transform:uppercase; padding:0 0 5px 30px; color:#9d9d9d}
+.wrapper th:first-child {padding-left:0}
+.wrapper td {vertical-align:top; text-align:left; border-top:1px solid #ebebeb; padding:13px 0 16px 30px}
+.wrapper thead+tbody td {padding-top:39px; padding-bottom:40px}
+.wrapper td:first-child {padding-left:0}
+.wrapper tbody tr:first-child td {border-top:none}
+.wrapper thead+tbody tr:first-child td {border-top:2px solid #ff3757}
+.wrapper thead+tbody tr:last-child td {border-bottom:1px solid #ebebeb}
+.table-row-title {font:12px/20px Lora, serif; text-transform:uppercase; color:#9d9d9d}
+
+@media screen and (min-width:1200px) {
+    .wrapper table {width:calc(100% + 30px); margin-left:-15px; margin-right:-15px}
+    .wrapper thead tr:before {content:""; display:table-cell; width:15px}
+    .wrapper thead tr:after {content:""; display:table-cell; width:15px}
+    .wrapper tbody tr:before {content:""; display:table-cell; width:15px; border-top:1px solid #fff}
+    .wrapper tbody tr:after {content:""; display:table-cell; width:15px; border-top:1px solid #fff}
+    .wrapper tbody tr:first-child:before {border-top:none}
+    .wrapper tbody tr:first-child:after {border-top:none}
+    .wrapper tbody tr:hover {background:#f7f7f7}
+    .wrapper tbody tr:hover td {border-top-color:#f7f7f7}
+    .wrapper tbody tr:hover:before {border-top-color:#f7f7f7}
+    .wrapper tbody tr:hover:after {border-top-color:#f7f7f7}
+    .wrapper tbody tr:hover+tr td {border-top-color:#f7f7f7}
+    .wrapper tbody tr:hover+tr:before {border-top-color:#f7f7f7}
+    .wrapper tbody tr:hover+tr:after {border-top-color:#f7f7f7}
+}
+
+@media screen and (max-width:1199px) {
+    .table-scroll-mobile {width:100%; overflow:auto}
+}
+
+.cols {margin:20px -15px}
+.form-field .cols {margin-top:0; margin-bottom:0}
+.cols:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.col-half {width:50%; float:left; padding:0 15px; box-sizing:border-box}
+.col-third {width:33.33%; float:left; padding:0 15px; box-sizing:border-box}
+.col-quarter {width:25%; float:left; padding:0 15px; box-sizing:border-box}
+
+.btn {display:block; border-radius:0; background:#fff; margin:0; padding:0; outline:none; width:100%; border:1px solid #036; text-decoration:none; height:40px; box-sizing:border-box; color:#036; text-align:center; text-transform:uppercase; font:12px/40px Roboto, sans-serif; -webkit-appearance:none; cursor:pointer; transition:all 0.25s ease-out 0s}
 .btn:hover {background:#036; color:#fff}
+.btn:active {background:#002141; border-color:#002141; color:#fff}
+
+.btn-submit {display:block; border:none; font:12px/60px Roboto, sans-serif; color:#fff; text-transform:uppercase; vertical-align:top; margin:0; padding:0; width:100%; height:60px; text-align:center; box-sizing:border-box; outline:none; border-radius:2px; background:#ff3757; -webkit-appearance:none; cursor:pointer; transition:all 0.25s ease-out 0s}
+.btn-submit:hover {background:#036; color:#fff}
+.btn-submit:active {background:#002141; color:#fff}
+
+.btn-submit-2 {display:block; border:none; font:12px/60px Roboto, sans-serif; color:#fff; text-transform:uppercase; vertical-align:top; margin:0; padding:0; width:100%; height:60px; text-align:center; box-sizing:border-box; outline:none; border-radius:2px; background:#036; -webkit-appearance:none; cursor:pointer; transition:all 0.25s ease-out 0s}
+.btn-submit-2:hover {background:#002141; color:#fff}
+.btn-submit-2:active {background:#00162b; color:#fff}
+
+form {margin:40px 0; border:1px solid #ebebeb; padding:10px 30px}
+
+.form-success {position:relative; text-align:center; background:#f8fdf8; border:1px solid #e5f6e5; padding:18px 30px 21px 30px; margin:25px 0}
+.form-success-title {color:#70ad47; text-transform:uppercase; font:17px/20px Lora, serif}
+
+.form-error {position:relative; text-align:center; background:#fffafa; border:1px solid #fde9e9; padding:18px 30px 21px 30px; margin:25px 0}
+.form-error-title {color:#ed1c24; text-transform:uppercase; font:17px/20px Lora, serif}
+
+.form-row {margin:20px 0}
+.form-field {position:relative}
+.form-field:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+
+.form-input {position:relative}
+.form-input span {position:absolute; left:19px; top:20px; text-transform:uppercase; color:#9d9d9d; font:12px/20px Lora, serif; transition:all .3s ease}
+.form-input.error span {color:#ed1c24}
+.form-input.focus span {font-size:10px; line-height:15px; top:10px}
+.form-input input,
+.form-input textarea {position:relative; border:1px solid #e1e1e1; font:20px/30px Roboto, sans-serif; color:#036; vertical-align:top; margin:0; padding:21px 19px 7px 19px; width:100%; height:60px; box-sizing:border-box; outline:none; border-radius:2px; background:url(../images/blank.gif); -webkit-appearance:none}
+.form-input textarea {height:auto; resize:none; overflow:auto}
+.form-input input:hover,
+.form-input textarea:hover {border-color:#036}
+.form-input input.error,
+.form-input textarea.error {border-color:#ed1c24}
+.form-input input.valid,
+.form-input textarea.valid {border-color:#8dc63f}
+.form-input input:focus,
+.form-input textarea:focus {border-color:#036}
+
+label.error {padding:8px 0 0 0; display:block; color:#ed1c24}
+
+::-ms-clear {display:none}
+
+.form-select select {border:1px solid #e1e1e1; font:20px/30px Roboto, sans-serif; color:#036; vertical-align:top; margin:0; padding:21px 19px 7px 19px; width:100%; height:60px; box-sizing:border-box; outline:none; border-radius:2px; background:#fff; -webkit-appearance:none}
+.form-select label.error {display:none !important}
+
+.form-file-input {float:left; width:168px; height:48px; background:#faf9fc; border:1px solid #faf9fc; border-radius:2px; text-align:center; position:relative; overflow:hidden; cursor:pointer; font:10px/48px Lora, serif; color:#036; text-transform:uppercase}
+.form-file-input input {height:200px; position:absolute; top:0; right:0; opacity:0; cursor:pointer; font-size:200px; background:url(../images/blank.gif); -webkit-appearance:none}
+.error .form-file-input {border-color:#ed1c24}
+.form-file-input label.error {display:none !important}
+.form-file-name {margin:0 0 0 190px; padding:13px 0 0 0; opacity:.5}
+
+.form-checkbox {margin:18px 0}
+.form-checkbox:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.form-checkbox label {float:left; margin:0; cursor:pointer; position:relative; padding:0 0 0 35px}
+.form-checkbox input {display:none}
+.form-checkbox span {display:block; position:absolute; left:0; top:0; width:21px; height:21px; border:1px solid #e1e1e1; background:url(../images/checkbox.png) no-repeat -999px -999px; border-radius:3px}
+.form-checkbox label:hover span {border-color:#ff3757}
+.form-checkbox label input:checked+span,
+.form-checkbox label input:checked+label+span {background-position:center; border-color:#ff3757; background-color:#ff3757}
+.form-checkbox strong {font-weight:normal; line-height:23px; color:rgba(157, 157, 157, .5)}
+.form-checkbox label:hover strong,
+.form-checkbox label input:checked+span+strong,
+.form-checkbox label input:checked+label+span+strong {color:#036}
+
+.form-radio {margin:18px 0}
+.form-radio:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.form-radio label {float:left; margin:0; cursor:pointer; position:relative; padding:0 0 0 30px}
+.form-radio input {display:none}
+.form-radio span {display:block; position:absolute; left:0; top:0; width:20px; height:20px; border:1px solid #e6e6e6; border-radius:50%}
+.form-radio label:hover span {border-color:#ff3757}
+.form-radio input:checked+span,
+.form-radio input:checked+label+span {width:6px; height:6px; border:8px solid #ff3757}
+.form-radio strong {font-weight:normal; line-height:23px; color:rgba(157, 157, 157, .5)}
+.form-radio label input:checked+span+strong,
+.form-radio label input:checked+label+span+strong {color:#036}
+
+.form-submit {margin:29px 0 0 0}
 
 .wrapper {min-width:1200px; width:100%; min-height:100%; position:relative; overflow:hidden}
 .wrapper-inner {padding:0 0 440px 0}
@@ -24,7 +163,7 @@ header {height:80px; background:#036}
 
 .logo {float:left; line-height:0; padding:12px 0 0 0}
 
-.logo-title {float:left; font:bold 15px/20px "Cormorant Garamond", serif; text-transform:uppercase; padding:31px 0 0 4px; color:#ff3757}
+.logo-title {float:left; font:12px/20px Lora, serif; text-transform:uppercase; padding:31px 0 0 4px; color:#ff3757}
 
 nav {float:left; margin:31px 0 0 97px}
 nav ul {margin:0; padding:0; list-style:none}
@@ -43,26 +182,33 @@ nav a:hover {color:#fff}
 
 .side {float:left; width:200px; padding:30px 0 0 0}
 
-.side-menu ul {margin:0; padding:19px 0 20px 0; font:bold 20px/40px "Cormorant Garamond", serif; list-style:none; border-top:1px solid #e5eaef}
+.side-menu ul {margin:0; padding:19px 0 20px 0; font:17px/40px Lora, serif; list-style:none; border-top:1px solid #e5eaef}
 .side-menu ul:first-child {border-top:none}
 .side-menu li {margin:0; padding:0; position:relative}
 .side-menu li:before {display:none}
 .side-menu li.active a {color:#ff3757}
-.side-menu span {display:block; position:absolute; right:0; top:50%; width:29px; height:29px; margin-top:-15px; color:#fff; background:#ff3757; border-radius:15px; font-size:20px; line-height:29px; text-align:center}
+.side-menu span {display:block; position:absolute; right:0; top:50%; width:29px; height:29px; margin-top:-15px; color:#fff; background:#ff3757; border-radius:15px; font-size:17px; line-height:29px; text-align:center}
 
 .side-contacts {background:#036; padding:24px 24px 33px 24px}
-.side-contacts-phone {font:bold 20px/20px "Cormorant Garamond", serif; color:#fff}
+.side-contacts-phone {font:17px/20px Lora, serif; color:#fff}
 .side-contacts-phone a,
 .side-contacts-phone a:hover {color:#fff}
 .side-contacts-schedule {font-size:12px; color:rgba(255, 255, 255, .75); padding:6px 0 0 0}
 .side-contacts-support-title {font-size:12px; color:rgba(255, 255, 255, .75); padding:21px 0 0 0; white-space:nowrap}
-.side-contacts-support {font:bold 18px/18px "Cormorant Garamond", serif; color:#fff}
+.side-contacts-support {font:15px/18px Lora, serif; color:#fff}
 .side-contacts-support a,
 .side-contacts-support a:hover {color:#fff}
 
 .side+.content {margin:0 0 0 300px}
 
 .content-wrap {float:left; width:100%; padding:47px 0 0 0}
+
+.breadcrumbs {color:#ff3757; margin:-29px 0 8px 0}
+.breadcrumbs a {color:#ff3757}
+.breadcrumbs a:hover {color:#036}
+.breadcrumbs+h1 {margin-top:0}
+
+.news-single-date {font-weight:300; font-size:20px; line-height:20px; color:#a0142a; margin:-39px 0 60px 0}
 
 .profile-block {border-bottom:1px solid #e5eaef; padding:49px 0}
 .profile-block:first-child {padding-top:0}
@@ -72,37 +218,40 @@ nav a:hover {color:#fff}
 
 .profile-avatar {float:left; width:68px; height:68px; border:1px solid #ff3757}
 .profile-avatar-add {display:block; font-size:10px; line-height:15px; text-align:center; text-transform:uppercase; height:49px; padding:19px 0 0 0}
-.profile-name {margin:0 0 0 100px; font:bold 25px/30px "Cormorant Garamond", serif; color:#036; padding:3px 0 0 0}
+.profile-name {margin:0 0 0 100px; font:22px/30px Lora, serif; color:#036; padding:3px 0 0 0}
 
-.profile-block-title {font:bold 18px/20px "Cormorant Garamond", serif; text-transform:uppercase; padding:9px 0 41px 0}
+.profile-block-title {font:15px/20px Lora, serif; text-transform:uppercase; padding:9px 0 41px 0}
 .profile-block-params {display:table; width:100%}
 .profile-block-param {display:table-cell; vertical-align:top; padding:0 0 0 30px}
 .profile-block-param:first-child {padding:0}
-.profile-block-param-title {font:bold 12px/20px "Cormorant Garamond", serif; text-transform:uppercase}
+.profile-block-param-title {font:10px/20px Lora, serif; text-transform:uppercase}
 .profile-block-param-value {color:#036; font-size:16px; line-height:20px}
 
-.childs {display:table; width:100%; border-spacing:0 20px; margin:-20px 0}
+.children {display:table; width:100%; border-spacing:0 20px; margin:-20px 0}
 .child {display:table-row}
+.child-photo {display:table-cell; padding:4px 10px 4px 4px; line-height:0; width:65px; border:1px solid #e5eaef; border-right:none}
+.child-photo img {width:65px}
 .child-info {display:table-cell; border:1px solid #e5eaef; padding:17px 20px 18px 20px; vertical-align:top; width:100%}
-.child-name {font:bold 20px/20px "Cormorant Garamond", serif}
+.child-photo+.child-info {border-left:none}
+.child-name {font:17px/20px Lora, serif}
 .child-params {font-weight:300; padding:3px 0 0 0}
 .child-params:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 .child-param {float:left; margin:0 0 0 106px}
 .child-param:first-child {margin:0}
 .child-finance {display:table-cell; border:1px solid #e5eaef; border-left:none; padding:18px 20px 18px 20px; vertical-align:top; white-space:nowrap}
-.child-finance-title {font:bold 12px/20px "Cormorant Garamond", serif; text-transform:uppercase}
+.child-finance-title {font:10px/20px Lora, serif; text-transform:uppercase}
 .child-finance-value {font-size:20px; color:#036; padding:1px 0 0 0}
 .child-finance-value-debt {color:#ff3757}
 .child-finance-value span {font-weight:300}
 
 .filter {border:1px solid #ebebeb; padding:18px 20px 20px 20px; margin:-20px 0 20px 0}
-.filter-title {font:bold 15px/20px "Cormorant Garamond", serif; text-transform:uppercase}
+.filter-title {font:12px/20px Lora, serif; text-transform:uppercase}
 .filter-title a {color:#9d9d9d; text-decoration:none}
 .filter-title a:after {content:""; display:inline-block; vertical-align:middle; width:0; height:0; border-bottom:7px solid #ff3757; border-left:6px solid transparent; border-right:6px solid transparent; margin:-2px 0 0 13px}
 .filter.closed .filter-title a:after {border-bottom:none; border-top:7px solid #ff3757}
 
 .filter.closed .filter-form {display:none}
-.filter-form form {margin:0; padding:20px 0 0 0}
+.filter-form form {margin:0; padding:20px 0 0 0; border:none}
 .filter-form form:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 .filter-field {float:left; width:50%; padding:0 15px 0 0; box-sizing:border-box}
 .filter-field+.filter-field {padding:0 0 0 15px}
@@ -111,7 +260,7 @@ nav a:hover {color:#fff}
 
 .news {margin:30px 0}
 .news-item {border-bottom:1px solid #ebebeb; padding:31px 0 40px 0}
-.news-item-name {font:bold 25px/30px "Cormorant Garamond", serif}
+.news-item-name {font:22px/30px Lora, serif}
 .news-item-anonce {padding:7px 0 0 0}
 .news-item-date {font-size:13px; color:#a0142a; padding:11px 0 0 0}
 
@@ -121,19 +270,10 @@ nav a:hover {color:#fff}
 .pager span {color:#036}
 .pager a.active {color:#fff; background:#036; border-color:#036}
 
-.tabs {border-bottom:1px solid #e5eaef; font-size:14px; font-weight:300}
-.tabs ul {margin:0; padding:0; list-style:none}
-.tabs li {margin:0 0 0 25px; padding:0; float:left}
-.tabs li:first-child {margin:0}
-.tabs li:before {display:none}
-.tabs a {float:left; position:relative; padding:28px 0 31px 0}
-.tabs li.active a:after,
-.tabs a:hover:after {content:""; display:block; position:absolute; left:0; bottom:-2px; right:0; height:3px; background:#ff3757}
-
 .loading {display:none; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(255, 255, 255, .5) url(../images/loading.svg) no-repeat center}
 
 .calendar {margin:40px 0; position:relative; border-top:1px solid #ebebeb; border-right:1px solid #ebebeb; border-bottom:1px solid #ebebeb}
-.calendar-month {position:relative; font:bold 20px/58px "Cormorant Garamond", serif; text-transform:uppercase; border-left:1px solid #ebebeb}
+.calendar-month {position:relative; font:17px/58px Lora, serif; text-transform:uppercase; border-left:1px solid #ebebeb}
 .calendar-month-current {text-align:center; color:#036}
 .calendar-month-prev,
 .calendar-month-next {position:absolute; top:0}
@@ -147,7 +287,7 @@ nav a:hover {color:#fff}
 .calendar-list:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 .calendar-item {float:left; box-sizing:border-box; border-top:1px solid #ebebeb; position:relative; border-left:1px solid #ebebeb; width:14.28%}
 .calendar-item-inner {position:relative; height:139px}
-.calendar-item-day {position:absolute; right:10px; top:9px; color:#cdcdcd; font:bold 14px/20px "Cormorant Garamond", serif}
+.calendar-item-day {position:absolute; right:10px; top:9px; color:#cdcdcd; font:11px/20px Lora, serif}
 .calendar-item:nth-child(7n) .calendar-item-day,
 .calendar-item:nth-child(7n - 1) .calendar-item-day {color:#ff3757}
 .calendar-item.active .calendar-item-day {color:#036}
@@ -174,7 +314,7 @@ nav a:hover {color:#fff}
 .calendar-item:nth-child(7n) .calendar-more+.calendar-more .calendar-more-close,
 .calendar-item:nth-child(7n - 1) .calendar-more+.calendar-more .calendar-more-close,
 .calendar-item:nth-child(7n - 2) .calendar-more+.calendar-more .calendar-more-close {left:-10px; right:auto}
-.calendar-more-date {text-align:center; font:bold 20px/20px "Cormorant Garamond", serif; color:#036; padding:27px 0 0 0}
+.calendar-more-date {text-align:center; font:17px/20px Lora, serif; color:#036; padding:27px 0 0 0}
 .calendar-more-list {padding:33px 13px 20px 0}
 .calendar-more-list-inner {max-height:220px; position:relative; overflow:auto; outline:none}
 .calendar-more-list-wrap {position:relative}
@@ -183,11 +323,11 @@ nav a:hover {color:#fff}
 .calendar-more-list-item a {color:#9d9d9d}
 .calendar-more-list-item a span {display:block; color:#036}
 .calendar-more-details {width:240px; padding:27px 30px 24px 30px}
-.calendar-more-details-name {font:bold 20px/20px "Cormorant Garamond", serif; color:#036}
+.calendar-more-details-name {font:17px/20px Lora, serif; color:#036}
 .calendar-more-details-name a {color:#01426a}
-.calendar-more-details-time {font:bold 20px/20px "Cormorant Garamond", serif; color:#ff3757; padding:20px 0 0 0}
+.calendar-more-details-time {font:17px/20px Lora, serif; color:#ff3757; padding:20px 0 0 0}
 .calendar-more-details-anonce {font-size:14px; line-height:20px; color:#8a8f99; padding:23px 0 0 0}
-.calendar-more-details-link {padding:23px 0 6px 0; font:bold 12px/16px "Cormorant Garamond", serif; text-transform:uppercase; text-align:right}
+.calendar-more-details-link {padding:23px 0 6px 0; font:10px/16px Lora, serif; text-transform:uppercase; text-align:right}
 .calendar-more-details-link:after {content:""; display:inline-block; vertical-align:middle; width:16px; height:17px; background:url(../images/calendar-more-details.png); margin:-2px 0 0 10px}
 
 .calendar-more-loading {height:100px}
@@ -234,39 +374,106 @@ footer {height:353px; position:relative; margin:-353px 0 0 0; background:#036 ur
 .page-auth footer {height:80px; margin:-80px 0 0 0; background:#036; text-align:center; overflow:hidden}
 
 .footer-item {display:inline-block; vertical-align:top; margin:0 39px}
-.footer-item-value {font:bold 20px/20px "Cormorant Garamond", serif; color:#fff; padding:19px 0 0 0}
+.footer-item-value {font:17px/20px Lora, serif; color:#fff; padding:19px 0 0 0}
 .footer-item-value a {color:#fff}
 .footer-item-text {font-size:12px; color:rgba(255, 255, 255, .75); padding:2px 0 0 0}
 
 .page-auth h1 {text-align:center; margin:37px 0 0 0}
 
 .auth-form {width:430px; border:1px solid #ebebeb; padding:19px 69px 39px 69px; margin:57px auto 0 auto}
-.auth-form form {margin:0; padding:0}
-
-.form-input {position:relative; margin:20px 0; background:transparent}
-.form-input span {position:absolute; left:19px; top:20px; text-transform:uppercase; color:#9d9d9d; font:bold 20px/20px "Cormorant Garamond", serif; transition:all .3s ease}
-.form-input.focus span {font-size:12px; line-height:15px; top:10px}
-.form-input input {position:relative; border:1px solid #e1e1e1; font:20px/30px Roboto, sans-serif; color:#036; vertical-align:top; margin:0; padding:21px 19px 7px 19px; width:100%; height:60px; box-sizing:border-box; outline:none; border-radius:2px; background:url(../images/blank.gif); -webkit-appearance:none}
-
-::-ms-clear {display:none}
-
-.form-checkbox {margin:29px 0}
-.form-checkbox:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
-.form-checkbox label {float:left; margin:0; cursor:pointer; position:relative; padding:0 0 0 35px}
-.form-checkbox input {display:none}
-.form-checkbox span {display:block; position:absolute; left:0; top:0; width:21px; height:21px; border:1px solid #e1e1e1; background:url(../images/checkbox.png) no-repeat -999px -999px; border-radius:3px}
-.form-checkbox label:hover span {border-color:#ff3757}
-.form-checkbox label input:checked+span,
-.form-checkbox label input:checked+label+span {background-position:center; border-color:#ff3757}
-.form-checkbox strong {font-weight:normal; line-height:23px}
-.form-checkbox label:hover strong,
-.form-checkbox label input:checked+span+strong,
-.form-checkbox label input:checked+label+span+strong {color:#000}
-
-.form-submit {margin:29px 0 0 0}
-.form-submit input {position:relative; border:none; font:12px/60px Roboto, sans-serif; color:#fff; text-transform:uppercase; vertical-align:top; margin:0; padding:0; width:100%; height:60px; box-sizing:border-box; outline:none; border-radius:2px; background:#ff3757; -webkit-appearance:none; cursor:pointer}
+.auth-form form {margin:0; padding:0; border:none}
+.auth-form .form-checkbox {margin:29px 0}
 
 .auth-link {text-align:center; padding:17px 0 0 0}
 .auth-link a {text-decoration:underline}
 
 .forgot-text {margin:18px 0 42px 0}
+
+.school-info {margin:-30px 0 0 0}
+.school-info-title {font:22px/30px Lora, serif; color:#036}
+.school-info-content {padding:18px 0 0 0}
+.school-info-content:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.school-info-phone {float:left; width:170px}
+.school-info-email {float:left; width:170px; margin:0 0 0 30px}
+.school-info-text {margin:0 0 0 400px}
+.school-info-name {font:10px/20px Lora, serif; text-transform:uppercase}
+
+.message {margin:20px 0; border-radius:3px; padding:30px}
+.message-alert {background:#fffafb; border:1px solid #ffcdd5}
+.message-info {background:#f8fafb; border:1px solid #acbccd}
+.message-inner {display:table; width:100%}
+.message-text {display:table-cell; width:100%; vertical-align:middle}
+.message-text h4 {margin:0}
+.message-ctrl {display:table-cell; vertical-align:middle; padding:0 0 0 30px}
+.message-ctrl .btn-submit {height:40px; line-height:40px; width:170px}
+
+.desktop-events {margin:60px -15px 0 -15px}
+.desktop-events:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.desktop-events-group {float:left; width:50%; padding:0 15px; box-sizing:border-box}
+.desktop-events-group-inner {background:#f7f7f7}
+.desktop-events-group-header {padding:0 30px}
+.desktop-events-group-header:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.desktop-events-group-header h3 {float:left; margin:0; padding:33px 0 0 0}
+.desktop-events-group-link {float:right; padding:38px 0 0 0}
+.desktop-events-group-link a {color:#ff3757; text-decoration:underline}
+.desktop-events-group-link a:hover {color:#036}
+.desktop-events-list {padding:9px 0 10px 0}
+.desktop-events-list .news-item {padding:28px 30px 32px 30px; border-bottom:0; border-top:1px solid #ebebeb}
+.desktop-events-list .news-item:first-child {border-top:none}
+.desktop-events-list .news-item-name {font-size:17px; line-height:20px}
+.desktop-events-list .news-item-anonce {padding:10px 0 0 0}
+.desktop-events-list .news-item-date {font-size:15px; line-height:20px; padding:10px 0 0 0}
+
+.window-open body {overflow:hidden}
+
+.window {position:fixed; left:0; top:0; right:0; bottom:0; z-index:99997; overflow:auto; background:rgba(0, 51, 102, .9)}
+.window-loading {position:absolute; left:50%; top:50%; width:24px; height:24px; margin:-12px 0 0 -12px; background:url(../images/loading.gif)}
+.window-container {position:absolute; z-index:99999; left:50%; top:50%}
+.window-container-load {position:fixed; left:-9999px; top:-9999px}
+.window-content {position:relative; background:#fff}
+.window-close {display:block; position:absolute; width:35px; height:35px; right:-18px; top:-18px; border-radius:50%; background:#ff3757 url(../images/window-close.png) no-repeat center}
+.window-close:hover {background-color:#036}
+
+.window-help {width:510px; padding:46px 60px 10px 60px}
+.window-help h1 {text-align:center}
+.window-help form {padding:0; border:none}
+
+.finances-child-info {font-weight:300; margin:-20px 0 20px 0}
+.finances-child-info:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.finances-child-info-item {float:left; margin:0 20px 0 0}
+.finances-child-info a {color:#9d9d9d; text-decoration:underline}
+.finances-child-info a:hover {color:#ff3757}
+
+thead+tbody td.finances-type {vertical-align:middle; padding-top:20px; padding-bottom:20px; font:14px/20px Lora, serif}
+thead+tbody td.finances-payment {vertical-align:middle; padding-top:20px; padding-bottom:20px}
+thead+tbody td.finances-balance {vertical-align:middle; padding-top:20px; padding-bottom:20px; font-size:16px; font-weight:300}
+thead+tbody td.finances-balance.debt {color:#ff3757}
+thead+tbody td.finances-balance strong {font-weight:bold}
+thead+tbody td.finances-balance span {display:block; font-size:13px; font-weight:normal}
+thead+tbody td.finances-pay {vertical-align:middle; width:170px; padding-top:20px; padding-bottom:20px}
+thead+tbody td.finances-pay .btn-submit-2 {height:40px; line-height:40px}
+thead+tbody td.finances-date {vertical-align:middle; padding-top:20px; padding-bottom:20px; color:#9d9d9d; white-space:nowrap; width:1%}
+
+.child-profile {margin:20px 0}
+.child-profile:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.child-profile-photo {float:left; width:170px; line-height:0}
+.child-profile-photo img {width:100%}
+.child-profile-info {margin:0 0 0 200px; font-weight:300}
+.child-profile-name {font:17px/20px Lora, serif; color:#036; padding:19px 0 0 0}
+.child-profile-birthday {padding:2px 0 0 0}
+.child-profile-school {padding:18px 0 0 0}
+
+.finances-main {display:table; width:100%; margin:60px 0 30px 0}
+.finances-main-inner {display:table-cell; vertical-align:middle}
+.finances-main-balance {float:left; border:1px solid #e5eaef; padding:0 30px 0 20px; height:98px}
+.finances-main-balance.penalty {background:#fffafb; border-color:#ffcdd5; margin:0 0 0 -1px}
+.finances-main-balance-title {text-transform:uppercase; font:10px/12px Lora, serif; padding:14px 0 0 0}
+.finances-main-balance-summ {font-weight:300; font-size:25px; line-height:30px; color:#036; padding:7px 0 0 0}
+.finances-main-balance.debt .finances-main-balance-summ {color:#ff3757}
+.finances-main-balance-summ strong {font-weight:bold}
+.finances-main-balance-hint {font-size:13px; line-height:13px}
+.finances-main-balance.debt .finances-main-balance-hint {color:#ff3757}
+.finances-main-balance-hint a {color:#9d9d9d; text-decoration:underline}
+.finances-main-balance-hint a:hover {color:#ff3757}
+.finances-main-pay {display:table-cell; width:170px; vertical-align:middle; padding:0 0 0 30px}
+.finances-main-pay .btn-submit-2 {height:40px; line-height:40px}
