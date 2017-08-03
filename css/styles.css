@@ -238,11 +238,18 @@ nav a:hover {color:#fff}
 .child-params:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 .child-param {float:left; margin:0 0 0 106px}
 .child-param:first-child {margin:0}
+.child-param a {color:#9d9d9d; text-decoration:underline}
+.child-param a:hover {color:#ff3757}
 .child-finance {display:table-cell; border:1px solid #e5eaef; border-left:none; padding:18px 20px 18px 20px; vertical-align:top; white-space:nowrap}
 .child-finance-title {font:10px/20px Lora, serif; text-transform:uppercase}
 .child-finance-value {font-size:20px; color:#036; padding:1px 0 0 0}
 .child-finance-value-debt {color:#ff3757}
 .child-finance-value span {font-weight:300}
+
+.child-finances {display:table; width:100%}
+.child-finances .child-photo {padding:0; border:none}
+.child-finances .child-info {border:none; padding:13px 0 0 14px 30px}
+.child-finances .child-param+.child-param {margin:0 0 0 20px}
 
 .filter {border:1px solid #ebebeb; padding:18px 20px 20px 20px; margin:-20px 0 20px 0}
 .filter-title {font:12px/20px Lora, serif; text-transform:uppercase}
@@ -462,8 +469,10 @@ thead+tbody td.finances-date {vertical-align:middle; padding-top:20px; padding-b
 .child-profile-name {font:17px/20px Lora, serif; color:#036; padding:19px 0 0 0}
 .child-profile-birthday {padding:2px 0 0 0}
 .child-profile-school {padding:18px 0 0 0}
+.child-profile-school a {color:#9d9d9d; text-decoration:underline}
+.child-profile-school a:hover {color:#ff3757}
 
-.finances-main {display:table; width:100%; margin:60px 0 30px 0}
+.finances-main {display:table; width:100%; margin:37px 0 30px 0}
 .finances-main-inner {display:table-cell; vertical-align:middle}
 .finances-main-balance {float:left; border:1px solid #e5eaef; padding:0 30px 0 20px; height:98px}
 .finances-main-balance.penalty {background:#fffafb; border-color:#ffcdd5; margin:0 0 0 -1px}
