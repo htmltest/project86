@@ -33,6 +33,9 @@ blockquote {font-size:20px; font-weight:300; line-height:30px; padding:0 0 0 27p
 .signature-text {float:left}
 .signature-text strong {color:#036; font:17px/20px Lora, serif}
 .signature-social {float:right; padding:6px 0 0 0}
+.signature-back {float:right}
+.signature-back a {color:#ff3757}
+.signature-back a:hover {color:#036}
 
 .wrapper table {width:100%; margin:40px 0 60px 0; border-collapse:collapse; color:#036}
 .wrapper th {vertical-align:top; text-align:left; font:10px/20px Lora, serif; text-transform:uppercase; padding:0 0 5px 30px; color:#9d9d9d}
@@ -203,11 +206,6 @@ nav a:hover {color:#fff}
 
 .content-wrap {float:left; width:100%; padding:47px 0 0 0}
 
-.breadcrumbs {color:#ff3757; margin:-29px 0 8px 0}
-.breadcrumbs a {color:#ff3757}
-.breadcrumbs a:hover {color:#036}
-.breadcrumbs+h1 {margin-top:0}
-
 .news-single-date {font-weight:300; font-size:20px; line-height:20px; color:#a0142a; margin:-39px 0 60px 0}
 
 .profile-block {border-bottom:1px solid #e5eaef; padding:49px 0}
@@ -216,8 +214,12 @@ nav a:hover {color:#fff}
 .profile-block-content {display:table-cell; vertical-align:middle}
 .profile-block-edit {display:table-cell; vertical-align:middle; width:170px; padding:0 0 0 30px}
 
-.profile-avatar {float:left; width:68px; height:68px; border:1px solid #ff3757}
-.profile-avatar-add {display:block; font-size:10px; line-height:15px; text-align:center; text-transform:uppercase; height:49px; padding:19px 0 0 0}
+.profile-avatar {float:left; width:70px}
+.profile-avatar img {width:100%; display:block}
+.profile-avatar-edit {text-align:center; font-size:10px; text-transform:uppercase; padding:8px 0 0 0}
+.profile-avatar-edit a {color:#ff3757}
+.profile-avatar-edit a:hover {color:#036}
+.profile-avatar-add {display:block; font-size:10px; line-height:15px; text-align:center; text-transform:uppercase; height:49px; padding:19px 0 0 0; width:68px; border:1px solid #ff3757}
 .profile-name {margin:0 0 0 100px; font:22px/30px Lora, serif; color:#036; padding:3px 0 0 0}
 
 .profile-block-title {font:15px/20px Lora, serif; text-transform:uppercase; padding:9px 0 41px 0}
@@ -231,10 +233,13 @@ nav a:hover {color:#fff}
 .child {display:table-row}
 .child-photo {display:table-cell; padding:4px 10px 4px 4px; line-height:0; width:65px; border:1px solid #e5eaef; border-right:none}
 .child-photo img {width:65px}
-.child-info {display:table-cell; border:1px solid #e5eaef; padding:17px 20px 18px 20px; vertical-align:top; width:100%}
+.child-info {display:table-cell; border:1px solid #e5eaef; padding:17px 30px 18px 20px; vertical-align:top; width:100%}
 .child-photo+.child-info {border-left:none}
+.child-link-journal {float:right}
+.child-link-journal a {color:#ff3757; text-decoration:underline}
+.child-link-journal a:hover {color:#036}
 .child-name {font:17px/20px Lora, serif}
-.child-params {font-weight:300; padding:3px 0 0 0}
+.child-params {font-weight:300; padding:3px 0 0 0; float:left; width:100%}
 .child-params:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 .child-param {float:left; margin:0 0 0 106px}
 .child-param:first-child {margin:0}
@@ -245,6 +250,9 @@ nav a:hover {color:#fff}
 .child-finance-value {font-size:20px; color:#036; padding:1px 0 0 0}
 .child-finance-value-debt {color:#ff3757}
 .child-finance-value span {font-weight:300}
+.child-journal-big-link {display:table-cell; border:1px solid #e5eaef; border-left:none; padding:18px 53px 18px 53px; vertical-align:middle; white-space:nowrap}
+.child-journal-big-link a {color:#ff3757; text-decoration:underline}
+.child-journal-big-link a:hover {text-decoration:none}
 
 .child-finances {display:table; width:100%}
 .child-finances .child-photo {padding:0; border:none}
