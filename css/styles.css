@@ -494,3 +494,21 @@ thead+tbody td.finances-date {vertical-align:middle; padding-top:20px; padding-b
 .finances-main-balance-hint a:hover {color:#ff3757}
 .finances-main-pay {display:table-cell; width:170px; vertical-align:middle; padding:0 0 0 30px}
 .finances-main-pay .btn-submit-2 {height:40px; line-height:40px}
+
+.pay-new {padding:0; border:none}
+.pay-new:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.pay-new .form-row {float:left; width:540px; margin:0}
+.pay-new .form-row+.form-row {width:240px; margin-left:30px}
+.pay-new .form-submit {margin:0}
+
+.pay-new .form-success {text-align:left; border-radius:3px; padding:30px}
+.pay-new .form-success-text {padding:0}
+.pay-new .form-success-text:before {content:""; display:inline-block; vertical-align:middle; width:40px; height:41px; background:url(../images/refill-success.png); margin:0 30px 0 0}
+
+.pay-new .form-error {text-align:left; border-radius:3px; padding:30px}
+.pay-new .form-error-text {padding:0}
+.pay-new .form-error-text:before {content:""; display:inline-block; vertical-align:middle; width:40px; height:41px; background:url(../images/refill-error.png); margin:0 30px 0 0}
+.pay-new .form-error-text a {color:#ff3757; text-decoration:underline}
+.pay-new .form-error-text a:hover {color:#036}
+
+.refill-confirm-text {line-height:60px; font-size:20px}
