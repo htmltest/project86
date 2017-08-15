@@ -101,6 +101,7 @@ form {margin:40px 0; border:1px solid #ebebeb; padding:10px 30px}
 .form-field:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 
 .form-input {position:relative}
+.form-input-date:before {content:""; display:block; position:absolute; right:20px; top:19px; width:20px; height:21px; background:url(../images/form-input-date.png)}
 .form-input span {position:absolute; left:19px; top:20px; text-transform:uppercase; color:#9d9d9d; font:12px/20px Lora, serif; transition:all .3s ease}
 .form-input.error span {color:#ed1c24}
 .form-input.focus span {font-size:10px; line-height:15px; top:10px}
