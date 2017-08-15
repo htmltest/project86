@@ -7,6 +7,13 @@ $(document).ready(function() {
         'Не соответствует формату'
     );
 
+    $.validator.addMethod('maskDate',
+        function(value, element) {
+            return /^\d{2}\.\d{2}\.\d{4}$/.test(value);
+        },
+        'Не соответствует формату'
+    );
+
     $('form').each(function() {
         initForm($(this));
     });
@@ -194,6 +201,18 @@ function initForm(curForm) {
         curField.find('label.error').remove();
         curField.removeClass('error');
     });
+
+    var dateFormat = 'dd.mm.yy';
+    curForm.find('.form-input-date input').datepicker({
+        dateFormat: dateFormat
+    });
+    window.setInterval(function() {
+        $('.form-input-date input').each(function() {
+            if ($(this).val() != '') {
+                $(this).parent().addClass('focus');
+            }
+        });
+    }, 100);
 
     if (curForm.hasClass('window-form')) {
         curForm.validate({

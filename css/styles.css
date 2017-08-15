@@ -305,6 +305,7 @@ nav a:hover {color:#fff}
 .calendar-item-day {position:absolute; right:10px; top:9px; color:#cdcdcd; font:11px/20px Lora, serif}
 .calendar-item:nth-child(7n) .calendar-item-day,
 .calendar-item:nth-child(7n - 1) .calendar-item-day {color:#ff3757}
+.calendar-item.active {background:#f9f9f9}
 .calendar-item.active .calendar-item-day {color:#036}
 .calendar-item-content {position:absolute; left:0; top:0; width:100%; box-sizing:border-box; font-size:10px; line-height:12px; padding:28px 5px 0 25px}
 .calendar-item-link {position:relative; padding:0 0 8px 0}
@@ -453,6 +454,10 @@ footer {height:353px; position:relative; margin:-353px 0 0 0; background:#036 ur
 .window-help h1 {text-align:center}
 .window-help form {padding:0; border:none}
 
+.window-profile {width:510px; padding:46px 60px 10px 60px}
+.window-profile h1 {margin-bottom:0}
+.window-profile form {margin:0; padding:0; border:none}
+
 .finances-child-info {font-weight:300; margin:-20px 0 20px 0}
 .finances-child-info:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 .finances-child-info-item {float:left; margin:0 20px 0 0}
@@ -512,3 +517,9 @@ thead+tbody td.finances-date {vertical-align:middle; padding-top:20px; padding-b
 .pay-new .form-error-text a:hover {color:#036}
 
 .refill-confirm-text {line-height:60px; font-size:20px}
+
+.feedback-link {position:fixed; z-index:900; right:0; top:132px; display:block; background:#ff3757 url(../images/feedback-link.png) no-repeat 15px 19px; padding:0 0 0 52px; height:60px; text-decoration:none; color:#fff}
+.feedback-link span {display:block; position:relative; width:0; padding:17px 0 0 0; overflow:hidden; text-transform:uppercase; font:10px/15px Lora, serif; transition:all .5s ease; letter-spacing:1px}
+.feedback-link span:before {content:""; display:block; position:absolute; left:0; top:14px; width:1px; height:32px; background:#ff8a9d}
+.feedback-link:hover {color:#fff}
+.feedback-link:hover span {width:80px; padding-left:16px}
