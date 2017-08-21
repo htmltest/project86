@@ -1,6 +1,6 @@
-html {min-width:1200px; height:100%}
+html {min-width:480px; height:100%}
 
-body {min-width:1200px; height:100%; margin:0; padding:0; font:15px/20px Roboto, sans-serif; color:#9d9d9d; background:#fff; -webkit-text-size-adjust:100%}
+body {min-width:480px; height:100%; margin:0; padding:0; font:15px/20px Roboto, sans-serif; color:#9d9d9d; background:#fff; -webkit-text-size-adjust:100%}
 
 a {outline:none; color:#036; text-decoration:none}
 a:hover {color:#ff3757}
@@ -10,6 +10,7 @@ img {border:none}
 h1 {margin:64px 0 53px 0; padding:0; font:37px/40px Lora, serif; color:#036; position:relative}
 h1:first-child {margin-top:0}
 h1 span {display:inline-block; vertical-align:middle; width:29px; height:29px; margin:2px 0 0 9px; color:#fff; background:#ff3757; border-radius:15px; font-size:20px; line-height:29px; text-align:center}
+h1 strong {font-weight:normal}
 h2 {margin:50px 0 20px 0; padding:0; font:27px/30px Lora, serif; color:#036}
 h3 {margin:40px 0 20px 0; padding:0; font:22px/30px Lora, serif; color:#036}
 h2+h3 {margin-top:0}
@@ -28,6 +29,13 @@ ol li:before {content:counter(point)'.'; counter-increment:point 1; position:abs
 li ol li:before {content:counter(point)'.'counter(subpoint); counter-increment:subpoint 1}
 blockquote {font-size:20px; font-weight:300; line-height:30px; padding:0 0 0 27px; border-left:3px solid #ff3757; margin:40px 0; color:#898989}
 
+@media screen and (max-width:1199px) {
+    h1 {text-align:center}
+    h1 strong {display:none}
+    .content-wide {margin-left:-55px; margin-right:-55px}
+    .no-mobile {display:none}
+}
+
 .signature {margin:40px 0}
 .signature:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 .signature-text {float:left}
@@ -36,6 +44,13 @@ blockquote {font-size:20px; font-weight:300; line-height:30px; padding:0 0 0 27p
 .signature-back {float:right}
 .signature-back a {color:#ff3757}
 .signature-back a:hover {color:#036}
+
+@media screen and (max-width:1199px) {
+    .signature-text {float:none}
+    .signature-social {float:none; padding:20px 0 0 0}
+    .signature-back {float:none; margin:20px 0 0 0}
+    .signature-back a:before {content:""; display:inline-block; vertical-align:middle; width:11px; height:7px; background:url(../images/signature-back.png); margin:-2px 9px 0 0}
+}
 
 .wrapper table {width:100%; margin:40px 0 60px 0; border-collapse:collapse; color:#036}
 .wrapper th {vertical-align:top; text-align:left; font:10px/20px Lora, serif; text-transform:uppercase; padding:0 0 5px 30px; color:#9d9d9d}
@@ -67,6 +82,7 @@ blockquote {font-size:20px; font-weight:300; line-height:30px; padding:0 0 0 27p
 
 @media screen and (max-width:1199px) {
     .table-scroll-mobile {width:100%; overflow:auto}
+    .wrapper h3+.table-scroll-mobile table {margin-top:0}
 }
 
 .cols {margin:20px -15px}
@@ -75,6 +91,13 @@ blockquote {font-size:20px; font-weight:300; line-height:30px; padding:0 0 0 27p
 .col-half {width:50%; float:left; padding:0 15px; box-sizing:border-box}
 .col-third {width:33.33%; float:left; padding:0 15px; box-sizing:border-box}
 .col-quarter {width:25%; float:left; padding:0 15px; box-sizing:border-box}
+
+@media screen and (max-width:1199px) {
+    .cols {margin:0}
+    .col-half,
+    .col-third,
+    .col-quarter {float:none; width:auto; margin:20px 0; padding:0}
+}
 
 .btn {display:block; border-radius:0; background:#fff; margin:0; padding:0; outline:none; width:100%; border:1px solid #036; text-decoration:none; height:40px; box-sizing:border-box; color:#036; text-align:center; text-transform:uppercase; font:12px/40px Roboto, sans-serif; -webkit-appearance:none; cursor:pointer; transition:all 0.25s ease-out 0s}
 .btn:hover {background:#036; color:#fff}
@@ -130,6 +153,11 @@ label.error {padding:8px 0 0 0; display:block; color:#ed1c24}
 .form-file-input label.error {display:none !important}
 .form-file-name {margin:0 0 0 190px; padding:13px 0 0 0; opacity:.5}
 
+@media screen and (max-width:1199px) {
+    .form-file-input {float:none}
+    .form-file-name {margin:0}
+}
+
 .form-checkbox {margin:18px 0}
 .form-checkbox:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 .form-checkbox label {float:left; margin:0; cursor:pointer; position:relative; padding:0 0 0 35px}
@@ -157,17 +185,34 @@ label.error {padding:8px 0 0 0; display:block; color:#ed1c24}
 
 .form-submit {margin:29px 0 0 0}
 
-.wrapper {min-width:1200px; width:100%; min-height:100%; position:relative; overflow:hidden}
+.wrapper {min-width:480px; width:100%; min-height:100%; position:relative; overflow:hidden}
 .wrapper-inner {padding:0 0 440px 0}
+
+@media screen and (max-width:1199px) {
+    .wrapper {min-height:0}
+    .wrapper-inner {padding:0 0 87px 0}
+}
 
 .container {max-width:1170px; padding:0 15px; margin:0 auto}
 .container:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+
+@media screen and (max-width:1199px) {
+    .container {padding:0 55px}
+}
 
 header {height:80px; background:#036}
 
 .logo {float:left; line-height:0; padding:12px 0 0 0}
 
+@media screen and (max-width:1199px) {
+    .logo {margin:0 0 0 -30px}
+}
+
 .logo-title {float:left; font:12px/20px Lora, serif; text-transform:uppercase; padding:31px 0 0 4px; color:#ff3757}
+
+@media screen and (max-width:1199px) {
+    .logo-title {display:none}
+}
 
 nav {float:left; margin:31px 0 0 97px}
 nav ul {margin:0; padding:0; list-style:none}
@@ -177,6 +222,38 @@ nav li:before {display:none}
 nav a {color:#fff; text-decoration:none}
 nav a:hover {color:#fff}
 
+@media screen and (max-width:1199px) {
+    nav {display:none}
+}
+
+.header-mobile-link {display:none}
+.header-mobile {display:none}
+
+@media screen and (max-width:1199px) {
+    .header-mobile-link {display:block; float:right; width:29px; height:22px; background:url(../images/header-mobile-link.png); margin:29px -30px 0 40px}
+    .header-mobile-open .header-mobile-link {background-position:left -23px}
+    .header-mobile-open {overflow:hidden}
+    .header-mobile-open body {overflow:hidden}
+    .header-mobile-open .header-mobile {display:block; position:fixed; right:0; top:80px; bottom:0; width:270px; padding:0 55px; z-index:9999; background:#036; overflow:auto}
+    .header-menu {font-size:20px; line-height:30px; text-align:right; color:#fff; padding:31px 0}
+    .header-menu ul {margin:0; padding:0; list-style:none}
+    .header-menu ul li {margin:0; padding:11px 0 18px 0; border-top:1px solid #1a4876}
+    .header-menu ul li:first-child {border-top:none}
+    .header-menu ul li:before {display:none}
+    .header-menu li a {color:#fff; text-decoration:none}
+    .header-menu li.active {text-decoration:underline}
+    .header-contacts {position:absolute; right:55px; bottom:51px; width:270px; text-align:right; color:#fff}
+    .header-contacts a {color:#fff; text-decoration:none}
+    .header-contacts-phone {font:22px/22px Lora, serif}
+    .header-contacts-schedule {opacity:.75; padding:6px 0 0 0}
+    .header-contacts-support-title {opacity:.75; padding:40px 0 0 0}
+    .header-contacts-support {font:22px/22px Lora, serif; padding:7px 0 0 0}
+}
+
+@media screen and (max-width:1199px) and (max-height:659px) {
+    .header-contacts {position:relative; right:auto; bottom:auto; padding:0 0 51px 0; width:auto}
+}
+
 .header-user {float:right; margin:27px 0 0 0}
 .header-user-link {display:block; position:relative; text-decoration:none; width:23px; height:23px; background:url(../images/header-user.png)}
 .header-user-link span {position:absolute; display:block; right:-4px; top:-8px; background:#fff; width:15px; height:15px; border-radius:50%; text-align:center; font-size:10px; line-height:15px}
@@ -184,7 +261,21 @@ nav a:hover {color:#fff}
 .header-search {float:right; margin:28px 48px 0 0}
 .header-search-link {display:block; position:relative; text-decoration:none; width:22px; height:22px; background:url(../images/header-search.png)}
 
+.side-mobile-link {display:none}
+
 .side {float:left; width:200px; padding:30px 0 0 0}
+
+@media screen and (max-width:1199px) {
+    .side {display:none}
+    .side-mobile-link {display:block; position:fixed; z-index:900; left:0; top:119px; background:#ff3757; width:40px; height:60px}
+    .side-mobile-link:before {content:""; display:block; width:21px; height:18px; position:absolute; left:8px; top:21px; background:url(../images/side-mobile-link.png)}
+    .side-mobile-open .side-mobile-link {z-index:9998}
+    .side-mobile-open .side-mobile-link:before {background-position:left -19px}
+    .side-mobile-open header {z-index:9999; position:relative}
+    .side-mobile-open {overflow:hidden}
+    .side-mobile-open body {overflow:hidden}
+    .side-mobile-open .side {display:block; position:fixed; left:0; top:0; bottom:0; padding:0; width:310px; z-index:9997; background:#036; overflow:auto}
+}
 
 .side-menu ul {margin:0; padding:19px 0 20px 0; font:17px/40px Lora, serif; list-style:none; border-top:1px solid #e5eaef}
 .side-menu ul:first-child {border-top:none}
@@ -192,6 +283,14 @@ nav a:hover {color:#fff}
 .side-menu li:before {display:none}
 .side-menu li.active a {color:#ff3757}
 .side-menu span {display:block; position:absolute; right:0; top:50%; width:29px; height:29px; margin-top:-15px; color:#fff; background:#ff3757; border-radius:15px; font-size:17px; line-height:29px; text-align:center}
+
+@media screen and (max-width:1199px) {
+    .side-menu {background:#ff3757; padding:110px 55px 61px 55px}
+    .side-menu ul {border-color:#c7374e}
+    .side-menu li a {color:#fff}
+    .side-menu li.active a {color:#fff; text-decoration:underline}
+    .side-menu span {background:#fff; color:#ff3757}
+}
 
 .side-contacts {background:#036; padding:24px 24px 33px 24px}
 .side-contacts-phone {font:17px/20px Lora, serif; color:#fff}
@@ -203,17 +302,38 @@ nav a:hover {color:#fff}
 .side-contacts-support a,
 .side-contacts-support a:hover {color:#fff}
 
+@media screen and (max-width:1199px) {
+    .side-contacts {padding:29px 55px}
+}
+
 .side+.content {margin:0 0 0 300px}
+
+@media screen and (max-width:1199px) {
+    .side+.content {margin:0}
+}
 
 .content-wrap {float:left; width:100%; padding:47px 0 0 0}
 
 .news-single-date {font-weight:300; font-size:20px; line-height:20px; color:#a0142a; margin:-39px 0 60px 0}
+
+@media screen and (max-width:1199px) {
+    .news-single-date {text-align:center}
+}
 
 .profile-block {border-bottom:1px solid #e5eaef; padding:49px 0}
 .profile-block:first-child {padding-top:0}
 .profile-block-inner {display:table; width:100%}
 .profile-block-content {display:table-cell; vertical-align:middle}
 .profile-block-edit {display:table-cell; vertical-align:middle; width:170px; padding:0 0 0 30px}
+
+@media screen and (max-width:1199px) {
+    .profile-block {padding:59px 0}
+    .profile-block:first-child {padding-top:0}
+    .profile-block-inner {display:block}
+    .profile-block-content {display:block}
+    .profile-block-content:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+    .profile-block-edit {display:block; width:auto; padding:42px 0 0 0}
+}
 
 .profile-avatar {float:left; width:70px}
 .profile-avatar img {width:100%; display:block}
@@ -230,6 +350,13 @@ nav a:hover {color:#fff}
 .profile-block-param-title {font:10px/20px Lora, serif; text-transform:uppercase}
 .profile-block-param-value {color:#036; font-size:16px; line-height:20px}
 
+@media screen and (max-width:1199px) {
+    .profile-block-params {display:block; width:auto; font-size:0; line-height:0; letter-spacing:-1; margin-top:-22px}
+    .profile-block-param {display:inline-block; font-size:15px; line-height:20px; letter-spacing:0; padding:22px 0 0 0; width:50%}
+    .profile-block-param-full {width:100%}
+    .profile-block-param:first-child {padding:22px 0 0 0}
+}
+
 .children {display:table; width:100%; border-spacing:0 20px; margin:-20px 0}
 .child {display:table-row}
 .child-photo {display:table-cell; padding:4px 10px 4px 4px; line-height:0; width:65px; border:1px solid #e5eaef; border-right:none}
@@ -239,6 +366,7 @@ nav a:hover {color:#fff}
 .child-link-journal {float:right}
 .child-link-journal a {color:#ff3757; text-decoration:underline}
 .child-link-journal a:hover {color:#036}
+.child-link-journal-mobile {display:none}
 .child-name {font:17px/20px Lora, serif}
 .child-params {font-weight:300; padding:3px 0 0 0; float:left; width:100%}
 .child-params:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
@@ -255,10 +383,35 @@ nav a:hover {color:#fff}
 .child-journal-big-link a {color:#ff3757; text-decoration:underline}
 .child-journal-big-link a:hover {text-decoration:none}
 
+@media screen and (max-width:1199px) {
+    .children {display:block; margin:0}
+    .child-journal {display:table; width:100%; border-spacing:0}
+    .child-photo {float:left; height:97px; background:#eee; line-height:97px; padding:1px; position:relative}
+    .child-photo:before {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; border:1px solid #fff}
+    .child-photo+.child-info {height:81px; padding:18px 0 0 30px; margin:0 0 0 65px}
+    .child-photo img {vertical-align:middle; position:relative}
+    .child {display:block; margin:20px 0}
+    .child-info {display:block; padding:17px 20px 18px 20px; width:auto}
+    .child-journal .child-info {display:table-cell; padding:17px 30px 18px 20px; width:100%}
+    .child-link-journal {float:none}
+    .child-finance {display:block; border-left:1px solid #e5eaef; border-top:none}
+    .child-params {float:none; width:auto}
+    .child-param {float:none; margin:0}
+    .child-link-journal {display:none}
+    .child-link-journal-mobile {display:block; padding:20px 0 0 0}
+    .child-link-journal-mobile a {color:#ff3757; text-decoration:underline}
+    .child-link-journal-mobile a:hover {color:#036}
+    .child-journal-big-link {padding-left:20px; padding-right:20px}
+}
+
 .child-finances {display:table; width:100%}
 .child-finances .child-photo {padding:0; border:none}
 .child-finances .child-info {border:none; padding:13px 0 0 14px 30px}
 .child-finances .child-param+.child-param {margin:0 0 0 20px}
+
+@media screen and (max-width:1199px) {
+    .child-finances {display:none}
+}
 
 .filter {border:1px solid #ebebeb; padding:18px 20px 20px 20px; margin:-20px 0 20px 0}
 .filter-title {font:12px/20px Lora, serif; text-transform:uppercase}
@@ -272,6 +425,11 @@ nav a:hover {color:#fff}
 .filter-field {float:left; width:50%; padding:0 15px 0 0; box-sizing:border-box}
 .filter-field+.filter-field {padding:0 0 0 15px}
 
+@media screen and (max-width:1199px) {
+    .filter-field {float:left; width:100%; padding:0}
+    .filter-field+.filter-field {padding:20px 0 0 0}
+}
+
 .form-select select {width:100%}
 
 .news {margin:30px 0}
@@ -279,6 +437,12 @@ nav a:hover {color:#fff}
 .news-item-name {font:22px/30px Lora, serif}
 .news-item-anonce {padding:7px 0 0 0}
 .news-item-date {font-size:13px; color:#a0142a; padding:11px 0 0 0}
+
+.news-empty {margin:40px 0 20px; width:842px; height:466px; background:url(../images/news-empty.png)}
+
+@media screen and (max-width:1199px) {
+    .news-empty {width:369px; background:url(../images/news-empty-mobile.png)}
+}
 
 .pager {margin:44px 0; text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
 .pager a,
@@ -352,6 +516,11 @@ nav a:hover {color:#fff}
 
 footer {height:353px; position:relative; margin:-353px 0 0 0; background:#036 url(../images/footer.png) no-repeat fixed center bottom}
 
+@media screen and (max-width:1199px) {
+    footer {height:auto; margin:0; background:#036}
+    footer .container:after {display:none}
+}
+
 .footer-menu {margin:0 -15px; font:16px/24px "PT Sans", sans-serif; padding:12px 0 0 0}
 .footer-menu:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 .footer-menu ul {float:left; width:25%; margin:0; padding:0 15px; box-sizing:border-box; list-style:none}
@@ -360,6 +529,11 @@ footer {height:353px; position:relative; margin:-353px 0 0 0; background:#036 ur
 .footer-menu ul li:before {display:none}
 .footer-menu a {color:#5594d1}
 .footer-menu a:hover {color:#6da3d7}
+
+@media screen and (max-width:1199px) {
+    .footer-menu {margin:0; padding:6px 0 0 0}
+    .footer-menu ul {float:none; width:auto; padding:31px 0 0 0}
+}
 
 .footer-social {margin:0 -15px; padding:24px 0 0 0}
 .footer-social:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
@@ -375,6 +549,14 @@ footer {height:353px; position:relative; margin:-353px 0 0 0; background:#036 ur
 .footer-social-inner a.footer-social-in:hover {background:url(../images/social-icon-insh.png)}
 .footer-social-inner a.footer-social-yt {background:url(../images/social-icon-yt.png)}
 .footer-social-inner a.footer-social-yt:hover {background:url(../images/social-icon-yth.png)}
+.footer-social .footer-link-error {display:none}
+
+@media screen and (max-width:1199px) {
+    .footer-social {margin:41px 0 0 0; border-top:1px solid #00295a; padding:37px 0 0 0}
+    .footer-social-line {display:none}
+    .footer-social-inner {float:none; padding:0; width:auto}
+    .footer-social .footer-link-error {display:block; width:100%; padding:39px 0 40px 0}
+}
 
 .bottom {margin:0 -15px}
 .bottom:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
@@ -386,20 +568,44 @@ footer {height:353px; position:relative; margin:-353px 0 0 0; background:#036 ur
 .footer-link-error a {color:#5594d1}
 .footer-link-error a:hover {color:#6da3d7}
 
+@media screen and (max-width:1199px) {
+    .bottom {margin:0; border-top:1px solid #00295a}
+    .bottom:after {display:none}
+    .footer-link-error {display:none}
+    .bottom-text {float:none; width:auto; padding:0}
+    .footer-logo {float:none; padding:37px 0 0 0}
+    .copyrights {margin:0; padding:35px 0 42px 0}
+}
+
 .page-auth .wrapper-inner {padding:0 0 100px 0}
 .page-auth .logo {text-align:center; float:none}
 .page-auth footer {height:80px; margin:-80px 0 0 0; background:#036; text-align:center; overflow:hidden}
+
+@media screen and (max-width:1199px) {
+    .page-auth {background:#036}
+    .page-auth footer {height:auto; margin:0}
+}
 
 .footer-item {display:inline-block; vertical-align:top; margin:0 39px}
 .footer-item-value {font:17px/20px Lora, serif; color:#fff; padding:19px 0 0 0}
 .footer-item-value a {color:#fff}
 .footer-item-text {font-size:12px; color:rgba(255, 255, 255, .75); padding:2px 0 0 0}
 
+@media screen and (max-width:1199px) {
+    .footer-item {float:left; width:50%; margin:0; text-align:center}
+}
+
 .page-auth h1 {text-align:center; margin:37px 0 0 0}
 
 .auth-form {width:430px; border:1px solid #ebebeb; padding:19px 69px 39px 69px; margin:57px auto 0 auto}
 .auth-form form {margin:0; padding:0; border:none}
 .auth-form .form-checkbox {margin:29px 0}
+
+@media screen and (max-width:1199px) {
+    .page-auth h1 {margin:0; padding:27px 0 0 0}
+    .page-auth .content-wrap {float:none; width:auto; background:#fff; border:none; margin-top:110px; padding:0 30px 20px 30px; margin-left:-30px; margin-right:-30px}
+    .auth-form {width:auto; border:none; margin:0; padding:16px 0 0 0}
+}
 
 .auth-link {text-align:center; padding:17px 0 0 0}
 .auth-link a {text-decoration:underline}
@@ -415,6 +621,12 @@ footer {height:353px; position:relative; margin:-353px 0 0 0; background:#036 ur
 .school-info-text {margin:0 0 0 400px}
 .school-info-name {font:10px/20px Lora, serif; text-transform:uppercase}
 
+@media screen and (max-width:1199px) {
+    .school-info-phone {float:none; width:auto}
+    .school-info-email {float:none; width:auto; margin:20px 0 0 0}
+    .school-info-text {margin:20px 0 0 0}
+}
+
 .message {margin:20px 0; border-radius:3px; padding:30px}
 .message-alert {background:#fffafb; border:1px solid #ffcdd5}
 .message-info {background:#f8fafb; border:1px solid #acbccd}
@@ -423,6 +635,14 @@ footer {height:353px; position:relative; margin:-353px 0 0 0; background:#036 ur
 .message-text h4 {margin:0}
 .message-ctrl {display:table-cell; vertical-align:middle; padding:0 0 0 30px}
 .message-ctrl .btn-submit {height:40px; line-height:40px; width:170px}
+
+@media screen and (max-width:1199px) {
+    .message-alert .message-inner {display:block}
+    .message-alert .message-text {display:block}
+    .message-alert .message-ctrl {display:block; padding:25px 0 0 0}
+    .message-alert .message-ctrl .btn-submit {width:auto}
+    .message-info .message-text h4 {margin-bottom:10px}
+}
 
 .desktop-events {margin:60px -15px 0 -15px}
 .desktop-events:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
@@ -441,6 +661,11 @@ footer {height:353px; position:relative; margin:-353px 0 0 0; background:#036 ur
 .desktop-events-list .news-item-anonce {padding:10px 0 0 0}
 .desktop-events-list .news-item-date {font-size:15px; line-height:20px; padding:10px 0 0 0}
 
+@media screen and (max-width:1199px) {
+    .desktop-events {margin-left:0; margin-right:0}
+    .desktop-events-group {float:none; width:auto; padding:0; margin:20px 0}
+}
+
 .window-open body {overflow:hidden}
 
 .window {position:fixed; left:0; top:0; right:0; bottom:0; z-index:99997; overflow:auto; background:rgba(0, 51, 102, .9)}
@@ -455,9 +680,23 @@ footer {height:353px; position:relative; margin:-353px 0 0 0; background:#036 ur
 .window-help h1 {text-align:center}
 .window-help form {padding:0; border:none}
 
+@media screen and (max-width:1199px) {
+    .window-help {width:370px; padding-left:30px; padding-right:30px}
+}
+
 .window-profile {width:510px; padding:46px 60px 10px 60px}
 .window-profile h1 {margin-bottom:0}
 .window-profile form {margin:0; padding:0; border:none}
+
+@media screen and (max-width:1199px) {
+    .window-profile {width:370px; padding-left:30px; padding-right:30px}
+}
+
+.finances-back {margin:-49px 0 43px 0}
+.finances-back a {display:inline-block; vertical-align:top; padding:0 0 0 22px; position:relative; color:#ff3757; text-decoration:underline}
+.finances-back a:hover {color:#036}
+.finances-back a:before {content:""; display:block; width:12px; height:9px; background:url(../images/finances-back.png); position:absolute; left:0; top:6px}
+.finances-back a:hover:before {background-position:left -10px}
 
 .finances-child-info {font-weight:300; margin:-20px 0 20px 0}
 .finances-child-info:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
@@ -475,6 +714,27 @@ thead+tbody td.finances-pay {vertical-align:middle; width:170px; padding-top:20p
 thead+tbody td.finances-pay .btn-submit-2 {height:40px; line-height:40px}
 thead+tbody td.finances-date {vertical-align:middle; padding-top:20px; padding-bottom:20px; color:#9d9d9d; white-space:nowrap; width:1%}
 
+@media screen and (max-width:1199px) {
+    .finances-child-table {width:auto; overflow:visible}
+    .finances-child-table table {display:block; margin:33px 0 72px 0}
+    .finances-child-table thead {display:block}
+    .finances-child-table tbody {display:block}
+    .finances-child-table tr {display:block}
+    .finances-child-table tr:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+    .finances-child-table tbody tr {border-bottom:1px solid #ebebeb}
+    .finances-child-table th {display:block; float:left; width:50%; padding-left:0}
+    .finances-child-table th+th {text-align:right}
+    .finances-child-table th+th+th {display:none}
+    .finances-child-table td {display:block; float:left; width:50%; padding-left:0; border:none}
+    .finances-child-table thead+tbody tr:last-child td {border:none}
+    .finances-child-table td+td {text-align:right}
+    .finances-child-table thead+tbody tr:first-child td+td+td {border-top:none}
+    .finances-child-table td+td+td {width:100%}
+    thead+tbody td.finances-pay {padding-bottom:29px; padding-top:11px}
+    thead+tbody td.finances-type {padding-top:30px}
+    thead+tbody td.finances-balance {padding-top:30px}
+}
+
 .child-profile {margin:20px 0}
 .child-profile:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 .child-profile-photo {float:left; width:170px; line-height:0}
@@ -485,6 +745,14 @@ thead+tbody td.finances-date {vertical-align:middle; padding-top:20px; padding-b
 .child-profile-school {padding:18px 0 0 0}
 .child-profile-school a {color:#9d9d9d; text-decoration:underline}
 .child-profile-school a:hover {color:#ff3757}
+
+.child-mobile-name {display:none}
+
+@media screen and (max-width:1199px) {
+    .child-mobile-name {display:block; margin:-13px 0 0 0}
+    .child-mobile-name a {color:#9d9d9d; text-decoration:underline}
+    .child-mobile-name a:hover {color:#ff3757}
+}
 
 .finances-main {display:table; width:100%; margin:37px 0 30px 0}
 .finances-main-inner {display:table-cell; vertical-align:middle}
@@ -500,6 +768,16 @@ thead+tbody td.finances-date {vertical-align:middle; padding-top:20px; padding-b
 .finances-main-balance-hint a:hover {color:#ff3757}
 .finances-main-pay {display:table-cell; width:170px; vertical-align:middle; padding:0 0 0 30px}
 .finances-main-pay .btn-submit-2 {height:40px; line-height:40px}
+.finances-main-mobile {display:none}
+
+@media screen and (max-width:1199px) {
+    .finances-main {display:none}
+    .finances-main-mobile {display:block}
+    .finances-main-mobile table {margin-bottom:22px}
+    .finances-child-table tbody tr:last-child {border-bottom:none}
+    .finances-main-pay {display:block; width:auto; padding:0}
+    .finances-main-pay .btn-submit-2 {height:60px; line-height:60px}
+}
 
 .pay-new {padding:0; border:none}
 .pay-new:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
@@ -507,15 +785,30 @@ thead+tbody td.finances-date {vertical-align:middle; padding-top:20px; padding-b
 .pay-new .form-row+.form-row {width:240px; margin-left:30px}
 .pay-new .form-submit {margin:0}
 
+@media screen and (max-width:1199px) {
+    .pay-new .form-row {width:calc(100% - 147px)}
+    .pay-new .form-row+.form-row {width:136px; margin-left:11px}
+}
+
 .pay-new .form-success {text-align:left; border-radius:3px; padding:30px}
 .pay-new .form-success-text {padding:0}
 .pay-new .form-success-text:before {content:""; display:inline-block; vertical-align:middle; width:40px; height:41px; background:url(../images/refill-success.png); margin:0 30px 0 0}
+
+@media screen and (max-width:1199px) {
+    .pay-new .form-success-text {padding-left:70px}
+    .pay-new .form-success-text:before {position:absolute; left:30px; top:50%; margin:-20px 0 0 0}
+}
 
 .pay-new .form-error {text-align:left; border-radius:3px; padding:30px}
 .pay-new .form-error-text {padding:0}
 .pay-new .form-error-text:before {content:""; display:inline-block; vertical-align:middle; width:40px; height:41px; background:url(../images/refill-error.png); margin:0 30px 0 0}
 .pay-new .form-error-text a {color:#ff3757; text-decoration:underline}
 .pay-new .form-error-text a:hover {color:#036}
+
+@media screen and (max-width:1199px) {
+    .pay-new .form-error-text {padding-left:70px}
+    .pay-new .form-error-text:before {position:absolute; left:30px; top:50%; margin:-20px 0 0 0}
+}
 
 .refill-confirm-text {line-height:60px; font-size:20px}
 
@@ -524,3 +817,13 @@ thead+tbody td.finances-date {vertical-align:middle; padding-top:20px; padding-b
 .feedback-link span:before {content:""; display:block; position:absolute; left:0; top:14px; width:1px; height:32px; background:#ff8a9d}
 .feedback-link:hover {color:#fff}
 .feedback-link:hover span {width:80px; padding-left:16px}
+
+@media screen and (max-width:1199px) {
+    .feedback-link {top:119px; background-position:9px 19px; padding:0 0 0 40px}
+}
+
+.up-link {display:none; position:fixed; right:9999px; bottom:25px; z-index:99; width:40px; height:40px; background:#ff3757 url(../images/up-link.png) no-repeat center; border-radius:50%}
+
+@media screen and (max-width:1199px) {
+    .up-link {display:block}
+}
