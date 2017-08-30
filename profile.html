@@ -127,12 +127,25 @@
                             <div class="profile">
                                 <!-- profile block -->
                                 <div class="profile-block">
+                                    <div class="profile-block-title" style="display:none">Изменение пароля</div>
                                     <div class="profile-block-inner">
                                         <div class="profile-block-content">
                                             <div class="profile-avatar"><a href="#" class="profile-avatar-add">Добавить<br /> фото</a></div>
                                             <div class="profile-name">Сергей Владимирович<br /> Романюк</div>
                                         </div>
-                                        <div class="profile-block-edit"><a href="#" class="btn">Изменить пароль</a></div>
+                                        <div class="profile-block-param" style="display:none">
+                                            <div class="profile-block-param-title">Старый пароль</div>
+                                            <div class="profile-block-param-value-new"><input id="password-old" name="password-old" type="password" class="required" value="" /></div>
+                                        </div>
+                                        <div class="profile-block-param" style="display:none">
+                                            <div class="profile-block-param-title">Новый пароль</div>
+                                            <div class="profile-block-param-value-new"><input id="password-new" name="password-new" type="password" class="required" value="" /></div>
+                                        </div>
+                                        <div class="profile-block-param" style="display:none">
+                                            <div class="profile-block-param-title">Подтверждение</div>
+                                            <div class="profile-block-param-value-new"><input id="password-confirm" name="password-confirm" type="password" equalTo="#password-new" value="" /></div>
+                                        </div>
+                                        <div class="profile-block-edit"><a href="windows/edit-results.json" class="btn edit-link">Изменить пароль</a></div>
                                     </div>
                                 </div>
                                 <!-- profile block END -->
@@ -146,22 +159,26 @@
                                                 <div class="profile-block-param">
                                                     <div class="profile-block-param-title">Телефон</div>
                                                     <div class="profile-block-param-value">+7 (909) 678-56-78</div>
+                                                    <div class="profile-block-param-value-new"><input id="phone-new" name="phone-new" type="text" class="required maskPhone" value="+7 (909) 678-56-78" /></div>
                                                 </div>
                                                 <div class="profile-block-param">
                                                     <div class="profile-block-param-title">Email</div>
                                                     <div class="profile-block-param-value">s.romanyuk@mail.ru</div>
+                                                    <div class="profile-block-param-value-new"><input id="email-new" name="email-new" type="text" class="required email" value="s.romanyuk@mail.ru" /></div>
                                                 </div>
                                                 <div class="profile-block-param">
                                                     <div class="profile-block-param-title">Дата рождения</div>
                                                     <div class="profile-block-param-value">12.10.1956</div>
+                                                    <div class="profile-block-param-value-new"><input id="birthday-new" name="birthday-new" type="text" class="required maskDate" value="12.10.1956" /></div>
                                                 </div>
                                                 <div class="profile-block-param">
                                                     <div class="profile-block-param-title">Город</div>
                                                     <div class="profile-block-param-value">Москва</div>
+                                                    <div class="profile-block-param-value-new"><input id="city-new" name="city-new" type="text" class="required" value="Москва" /></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="profile-block-edit"><a href="windows/profile.html" class="btn window-link">Изменить</a></div>
+                                        <div class="profile-block-edit"><a href="windows/edit-results.json" class="btn edit-link">Изменить</a></div>
                                     </div>
                                 </div>
                                 <!-- profile block END -->
@@ -175,10 +192,11 @@
                                                 <div class="profile-block-param profile-block-param-full">
                                                     <div class="profile-block-param-title">Данные</div>
                                                     <div class="profile-block-param-value">Паспорт, серия 5151 номер 123985, выдан УВД г. Москвы 01.01.2001, код 523-290</div>
+                                                    <div class="profile-block-param-value-new"><input id="passport-new" name="passport-new" type="text" class="required" value="Паспорт, серия 5151 номер 123985, выдан УВД г. Москвы 01.01.2001, код 523-290" /></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="profile-block-edit"><a href="#" class="btn">Изменить</a></div>
+                                        <div class="profile-block-edit"><a href="windows/edit-results-error.json" class="btn edit-link">Изменить</a></div>
                                     </div>
                                 </div>
                                 <!-- profile block END -->
@@ -192,10 +210,11 @@
                                                 <div class="profile-block-param profile-block-param-full">
                                                     <div class="profile-block-param-title">Текущий адрес</div>
                                                     <div class="profile-block-param-value">119334, г. Москва, ул. Кржижановского, д. 16, корп. 1, офис 144</div>
+                                                    <div class="profile-block-param-value-new"><input id="address-new" name="address-new" type="text" class="required" value="119334, г. Москва, ул. Кржижановского, д. 16, корп. 1, офис 144" /></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="profile-block-edit"><a href="#" class="btn">Изменить</a></div>
+                                        <div class="profile-block-edit"><a href="windows/edit-results-error.json" class="btn edit-link">Изменить</a></div>
                                     </div>
                                 </div>
                                 <!-- profile block END -->

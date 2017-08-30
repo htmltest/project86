@@ -349,6 +349,7 @@ nav a:hover {color:#fff}
 .profile-block-param:first-child {padding:0}
 .profile-block-param-title {font:10px/20px Lora, serif; text-transform:uppercase}
 .profile-block-param-value {color:#036; font-size:16px; line-height:20px}
+.profile-block-param-value-new {display:none}
 
 @media screen and (max-width:1199px) {
     .profile-block-params {display:block; width:auto; font-size:0; line-height:0; letter-spacing:-1; margin-top:-22px}
@@ -684,8 +685,8 @@ footer {height:353px; position:relative; margin:-353px 0 0 0; background:#036 ur
     .window-help {width:370px; padding-left:30px; padding-right:30px}
 }
 
-.window-profile {width:510px; padding:46px 60px 10px 60px}
-.window-profile h1 {margin-bottom:0}
+.window-profile {width:510px; padding:10px 60px 10px 60px}
+.window-profile h1 {margin-bottom:0; padding-top:36px}
 .window-profile form {margin:0; padding:0; border:none}
 
 @media screen and (max-width:1199px) {

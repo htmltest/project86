@@ -188,6 +188,147 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.profile-block-param-value-new input').each(function() {
+        var curInput = $(this);
+        if (curInput.attr('id') != '') {
+            curInput.attr('id', curInput.attr('id') + '_');
+        }
+    });
+
+    $('body').on('click', '.edit-link', function(e) {
+        var curBlock = $(this).parents().filter('.profile-block');
+
+        var curPadding = $('.wrapper').width();
+        $('html').addClass('window-open');
+        curPadding = $('.wrapper').width() - curPadding;
+        $('body').css({'margin-right': curPadding + 'px'});
+
+        if ($('.window').length > 0) {
+            $('.window').remove();
+        }
+
+        var windowHTML =    '<div class="window-profile">' +
+                                '<h1>' + curBlock.find('.profile-block-title').html() + '</h1>' +
+                                '<form action="' + $(this).attr('href') + '" method="post" class="novalidate">';
+
+        curBlock.find('.profile-block-param').each(function() {
+            var curField = $(this);
+            if (curField.find('.maskDate').length > 0) {
+                windowHTML +=       '<div class="form-row">' +
+                                        '<div class="form-field">' +
+                                            '<div class="form-input form-input-date"><span>' + curField.find('.profile-block-param-title').html() + '</span>' + curField.find('.profile-block-param-value-new').html() + curField.find('.profile-block-param-value-new').html() + '</div>' +
+                                        '</div>' +
+                                    '</div>';
+            } else {
+                windowHTML +=       '<div class="form-row">' +
+                                        '<div class="form-field">' +
+                                            '<div class="form-input"><span>' + curField.find('.profile-block-param-title').html() + '</span>' + curField.find('.profile-block-param-value-new').html() + curField.find('.profile-block-param-value-new').html() + '</div>' +
+                                        '</div>' +
+                                    '</div>';
+            }
+        });
+
+        windowHTML +=               '<div class="form-row">' +
+                                        '<div class="form-field">' +
+                                            '<div class="cols">' +
+                                                '<div class="col-half">' +
+                                                    '<div class="form-submit">' +
+                                                        '<input type="submit" value="Сохранить" class="btn-submit" />' +
+                                                    '</div>' +
+                                                '</div>' +
+                                            '</div>' +
+                                        '</div>' +
+                                    '</div>' +
+                                '</form>' +
+                            '</div>';
+
+        $('body').append('<div class="window"><div class="window-loading"></div></div>');
+        $('.window').append('<div class="window-container"><div class="window-content">' + windowHTML + '<a href="#" class="window-close"></a></div></div>');
+        $('.window').data('curBlock', curBlock);
+
+        $('.window .form-input').each(function() {
+            var curInput = $(this).find('input').eq(0);
+            if (curInput.attr('id') != '') {
+                curInput.attr('id', curInput.attr('id').slice(0, -1));
+            }
+        });
+
+        $('.window .form-input').each(function() {
+            var curInput = $(this).find('input').eq(1);
+            curInput.hide();
+            if (curInput.attr('id') != '') {
+                curInput.attr('id', curInput.attr('id') + 'old');
+            }
+            if (curInput.attr('name') != '') {
+                curInput.attr('name', curInput.attr('name') + '_old');
+            }
+        });
+
+        windowPosition();
+
+        $(window).resize(function() {
+            windowPosition();
+        });
+
+        $('.window-close').click(function(e) {
+            windowClose();
+            e.preventDefault();
+        });
+
+        $('body').on('keyup', function(e) {
+            if (e.keyCode == 27) {
+                windowClose();
+            }
+        });
+
+        $('.window form').each(function() {
+            var curForm = $(this);
+            initForm(curForm);
+            curForm.validate({
+                ignore: '',
+                invalidHandler: function(form, validatorcalc) {
+                    validatorcalc.showErrors();
+                    checkErrors();
+                },
+                submitHandler: function(form) {
+                    $.ajax({
+                        type: 'POST',
+                        url: $(form).attr('action'),
+                        dataType: 'json',
+                        data: $(form).serialize(),
+                        cache: false
+                    }).complete(function(data) {
+                        var obj = $.parseJSON(data.responseText);
+                        curForm.find('.form-success, .form-error').remove();
+                        if (obj.s == '1') {
+                            curForm.prepend('<div class="form-success"><div class="form-success-title">' + obj.m + '</div></div>');
+                            var curBlock = $('.window').data('curBlock');
+                            curBlock.find('.profile-block-param').each(function() {
+                                var curField = $(this);
+                                var curIndex = curBlock.find('.profile-block-param').index(curField);
+                                var curValue = $('.window .form-input').eq(curIndex).find('input').val();
+                                curField.find('.profile-block-param-value').html(curValue);
+                                curField.find('.profile-block-param-value-new input').attr('value', curValue);
+                            });
+                            $('.window .form-row').remove();
+                            windowPosition();
+                        } else {
+                            curForm.prepend('<div class="form-error"><div class="form-error-title">' + obj.m + '</div></div>');
+                        }
+                    });
+                }
+            });
+        });
+
+        $(document).click(function(e) {
+            if ($(e.target).hasClass('window')) {
+                windowClose();
+            }
+        });
+
+        e.preventDefault();
+    });
+
 });
 
 $(window).on('resize', function() {
@@ -260,13 +401,15 @@ function initForm(curForm) {
             }
         });
     } else {
-        curForm.validate({
-            ignore: '',
-            invalidHandler: function(form, validatorcalc) {
-                validatorcalc.showErrors();
-                checkErrors();
-            }
-        });
+        if (!curForm.hasClass('novalidate')) {
+            curForm.validate({
+                ignore: '',
+                invalidHandler: function(form, validatorcalc) {
+                    validatorcalc.showErrors();
+                    checkErrors();
+                }
+            });
+        }
     }
 }
 
