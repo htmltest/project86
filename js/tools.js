@@ -255,6 +255,7 @@ $(document).ready(function() {
 
         $('.window .form-input').each(function() {
             var curInput = $(this).find('input').eq(1);
+            curInput.removeAttr('class').removeAttr('equalTo');
             curInput.hide();
             if (curInput.attr('id') != '') {
                 curInput.attr('id', curInput.attr('id') + 'old');
