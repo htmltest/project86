@@ -2,6 +2,9 @@ $(document).ready(function() {
 
     $.validator.addMethod('maskPhone',
         function(value, element) {
+            if (value == '') {
+                return true;
+            }
             return /^\+7 \(\d{3}\) \d{3}\-\d{2}\-\d{2}$/.test(value);
         },
         'Не соответствует формату'
@@ -9,6 +12,9 @@ $(document).ready(function() {
 
     $.validator.addMethod('maskDate',
         function(value, element) {
+            if (value == '') {
+                return true;
+            }
             return /^\d{2}\.\d{2}\.\d{4}$/.test(value);
         },
         'Не соответствует формату'
