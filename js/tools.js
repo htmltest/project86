@@ -314,8 +314,11 @@ $(document).ready(function() {
                                 var curField = $(this);
                                 var curIndex = curBlock.find('.profile-block-param').index(curField);
                                 var curValue = $('.window .form-input').eq(curIndex).find('input').val();
-                                curField.find('.profile-block-param-value').html(curValue);
                                 curField.find('.profile-block-param-value-new input').attr('value', curValue);
+                                if (curValue == '') {
+                                    curValue = 'Не указано';
+                                }
+                                curField.find('.profile-block-param-value').html(curValue);
                             });
                             $('.window .form-row').remove();
                             windowPosition();
