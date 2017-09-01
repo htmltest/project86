@@ -199,6 +199,9 @@ $(document).ready(function() {
         if (curInput.attr('id') != '') {
             curInput.attr('id', curInput.attr('id') + '_');
         }
+        if (curInput.attr('value') == 'не указано') {
+            curInput.attr('value', '');
+        }
     });
 
     $('body').on('click', '.edit-link', function(e) {
@@ -317,6 +320,9 @@ $(document).ready(function() {
                                 curField.find('.profile-block-param-value-new input').attr('value', curValue);
                                 if (curValue == '') {
                                     curValue = 'Не указано';
+                                    curField.find('.profile-block-param-value').addClass('profile-block-param-value-none');
+                                } else {
+                                    curField.find('.profile-block-param-value').removeClass('profile-block-param-value-none');
                                 }
                                 curField.find('.profile-block-param-value').html(curValue);
                             });
